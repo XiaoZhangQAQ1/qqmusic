@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib uri="/struts-tags" prefix="s"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -592,9 +593,9 @@
 									<div class="songlist__songname">
 										<span class="songlist__songname_txt">
 										<a  href="http://y.qq.com/portal/song/002QyILG4ROqHS.html"
-											class="js_song" title="list.songName">
+											class="js_song" title="#list.songName">
 											
-											<s:property value="list.songName" />
+											<s:property value="#list.songName" />
 											
 										</a> 
 										</span> 
@@ -623,9 +624,9 @@
 									<div class="songlist__artist">
 										<a href="http://y.qq.com/portal/singer/000GDFdW1he8eS.html"
 											data-singermid="000GDFdW1he8eS" data-singerid="182742"
-											title="list.artistName" class="singer_name">
+											title="#list.artistName" class="singer_name">
 										
-											<s:property value="list.artistName"/>
+											<s:property value="#list.artistName"/>
 										
 										</a>
 											
@@ -639,10 +640,18 @@
 									<div class="songlist__album">
 										<a data-albummid="0017Wxwf08P1KF" data-albumid="1032937"
 											href="http://y.qq.com/portal/album/0017Wxwf08P1KF.html"
-											title="Closer" class="album_name">Closer</a>
+											title="#list.recordName" class="album_name">
+										
+										<s:property value="#list.recordName" />
+										
+										</a>
 									</div>
 									<!-- 音轨长度 -->
-									<div class="songlist__time"><s:date name="时长" format=" mm:ss" var="list.duration"  ></s:date></div>
+									<div class="songlist__time">
+									
+									<s:date name="时长" format=" mm:ss" var="#list.duration"  ></s:date>
+									
+									</div>
 									<div class="songlist__other">
 										<i class="icon_sosomusic">无版权</i>
 									</div>
