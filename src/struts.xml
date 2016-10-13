@@ -35,5 +35,21 @@
 			<result name="success" type="redirect" >album.jsp</result>
 		</action>
 		
+		<!-- "音乐库"singerlist页action -->
+		<action name="singerlist" class="com.bdqn.qqmusic.action.SingerListAction" >
+			<result name="singerlist"  >testA.jsp</result>
+		</action>
+				
 	</package>
+	
+		<package name="json" namespace="/" extends="json-default">
+		<action name="testJson" class="com.bdqn.qqmusic.action.SingerListAction">			
+			<result name="singerlist" type="json" >
+				<param name="includeProperties">
+					list.*
+				</param>
+			</result>
+		</action>
+	</package>
+	
 </struts>    

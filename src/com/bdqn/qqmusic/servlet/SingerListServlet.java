@@ -20,14 +20,15 @@ public class SingerListServlet extends HttpServlet{
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();	
 		ArtistService artist=new ArtistService();
-		List<Artist> listArtist=artist.getAllArtists();
+		List<Artist> listArtist=artist.getAllArtists();		
 		
 		System.out.println(listArtist.get(0).getAname());
 		request.getSession().setAttribute("listArtist", listArtist);
 		response.sendRedirect("singerlist.jsp");
 		out.flush();
 		out.close();
-		
+		//testArtist.jsp
+		//singerlist.jspC:\Users\Administrator\git\qqmusic\WebRoot\images\陈奕迅.png
 	}
 	
 }

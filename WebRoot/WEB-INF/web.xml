@@ -33,14 +33,16 @@
   </servlet>
 
 
-	<servlet>  
+ 	<servlet>  
     	<servlet-name>SingerListServlet</servlet-name>
     	<servlet-class>com.bdqn.qqmusic.servlet.SingerListServlet</servlet-class>
   	</servlet>
 	<servlet-mapping>
 		<servlet-name>SingerListServlet</servlet-name>
+
 		<url-pattern>/singerlist.servlet</url-pattern>
 	</servlet-mapping>
+
 
 <!-- 	<filter-mapping>
 		<filter-name>CharaterEncodingFilter</filter-name>
