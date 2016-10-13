@@ -3,7 +3,6 @@ package com.bdqn.qqmusic.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,11 +11,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bdqn.qqmusic.pojo.Record;
-import com.bdqn.qqmusic.pojo.Song;
 import com.bdqn.qqmusic.service.RecordService;
-import com.bdqn.qqmusic.service.SongService;
 
-public class AlbumServlet extends HttpServlet {
+public class PlaylistServlet extends HttpServlet {
+
+	/**
+	 * Constructor of the object.
+	 */
+	public PlaylistServlet() {
+		super();
+	}
+
+	/**
+	 * Destruction of the servlet. <br>
+	 */
+	public void destroy() {
+		super.destroy(); // Just puts "destroy" string in log
+		// Put your code here
+	}
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -30,29 +42,25 @@ public class AlbumServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		
-		PrintWriter out = response.getWriter();		
+		
+		PrintWriter out = response.getWriter();
+		
+		
 		RecordService recordService=new RecordService();
 		List<Record> mod_playlist=new ArrayList<Record>();
 		mod_playlist=recordService.getAllRecord();
-		System.out.println("hah");
-		for (Record record : mod_playlist) {
-			System.out.println(record.getRname()+" "+record.getRdate());
+		System.out.println("hah_00");
+		for(int i=0;i<mod_playlist.size();i++){
+			System.out.println(mod_playlist.get(i).getType().getTtype()+"\t"+mod_playlist.get(i).getRname()+"\t"+mod_playlist.get(i).getRmainartist());
 		}
+		System.out.println("fff");
 		request.getSession().setAttribute("all", mod_playlist);
-
-
-		//弄了struts不用在servlet跳转,
-		//response.sendRedirect("../qqmusic/album.jsp");
-		//out.flush();
-		//out.close();
-
-
+		response.sendRedirect("../qqmusic/playlist.jsp");//重定向，2次请求（客户端行为）
+		out.flush();//挥霍：输出
+		out.close();//关闭
 	}
 
-	
-	
 	/**
 	 * The doPost method of the servlet. <br>
 	 *
@@ -79,6 +87,15 @@ public class AlbumServlet extends HttpServlet {
 		out.println("</HTML>");
 		out.flush();
 		out.close();
+	}
+
+	/**
+	 * Initialization of the servlet. <br>
+	 *
+	 * @throws ServletException if an error occurs
+	 */
+	public void init() throws ServletException {
+		// Put your code here
 	}
 
 }
