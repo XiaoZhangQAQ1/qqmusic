@@ -10,22 +10,22 @@
             <column name="rid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="type" class="com.bdqn.qqmusic.pojo.Type" fetch="select">
+        <many-to-one name="type" class="com.bdqn.qqmusic.pojo.Type" fetch="select" lazy="false">
             <column name="rtid">
                 <comment>type</comment>
             </column>
         </many-to-one>
-        <many-to-one name="genre" class="com.bdqn.qqmusic.pojo.Genre" fetch="select">
+        <many-to-one name="genre" class="com.bdqn.qqmusic.pojo.Genre" fetch="select" lazy="false">
             <column name="rgid">
                 <comment>style</comment>
             </column>
         </many-to-one>
-        <many-to-one name="company" class="com.bdqn.qqmusic.pojo.Company" fetch="select">
+        <many-to-one name="company" class="com.bdqn.qqmusic.pojo.Company" fetch="select" lazy="false">
             <column name="rcid">
                 <comment>company</comment>
             </column>
         </many-to-one>
-        <many-to-one name="language" class="com.bdqn.qqmusic.pojo.Language" fetch="select">
+        <many-to-one name="language" class="com.bdqn.qqmusic.pojo.Language" fetch="select" lazy="false">
             <column name="rlid">
                 <comment>language</comment>
             </column>
