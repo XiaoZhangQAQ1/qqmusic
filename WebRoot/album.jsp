@@ -16,7 +16,7 @@
     <link rel="canonical" href="http://y.qq.com/portal/album_lib.html">
 	
 <script id="mod_spt">
-document.domain = 'qq.com';
+//document.domain = 'qq.com';                                                      //Disablized it for testing
 (function(m, o, d, u, l, a, r) {
 	if(m[o]) {return;}  
 	function f(n) { 
@@ -37,7 +37,7 @@ window.SPD={_timing:{},_start:(new Date()),mark:function(a,b){this._timing[a]=(b
 	<script type="text/javascript" src="js/album.js	"></script>
     <link rel="stylesheet" href="css/album.css">
     <link rel="stylesheet" href="css/layout0914.css">
-<script type="text/javascript">SPD.mark(31); // CSS加载完毕</script> 
+<script type="text/javascript">//SPD.mark(31);      //Disablized it for testing                                     // CSS加载完毕</script>     
 <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
 .en-markup-crop-options {
     top: 18px !important;
@@ -388,8 +388,10 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 <!-- 专辑筛选遍历展示  -->
 <c:forEach items="${sessionScope.all}" var="record">                
 <li class="playlist__item" data-albummid="001VHkqi3kBVce" 
-						   onmouseover="this.className=(this.className+&#39; playlist__item--hover&#39;)" 
-						   onmouseout="this.className=this.className.replace(/ playlist__item--hover/, &#39;&#39;)">
+						   onmouseover=""  
+						   onmouseout=""> 
+						   <!--  this.className=(this.className+&#39; playlist__item--hover&#39;)  -->
+						   <!-- this.className=this.className.replace(/ playlist__item--hover/, &#39;&#39;) -->
 	<div class="playlist__item_box">
 		<div class="playlist__cover mod_cover" style="visibility: visible;">
 			<a href="http://y.qq.com/portal/album/001VHkqi3kBVce.html#stat=y_new.album_lib.album_pic" 
@@ -526,7 +528,12 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 
 
 
-<script>SPD.mark(32); <!-- // HTML加载完毕</script> -->
+<script>SPD.mark(32);  
+
+
+<a href="javascript:;" class="btn_bottom_top sprite js_btn_top" style="display: none;"><span class="icon_txt">返回顶部</span></a><a href="javascript:;" class="btn_bottom_feedback sprite js_btn_feedback"><span class="icon_txt">意见反馈</span></a><a href="http://y.qq.com/portal_old" class="btn_bottom_back js_goto_old" target="_blank">返回旧版</a><div id="divdialog_0"></div></body><div></div></html>
+
+<!-- // HTML加载完毕;</script> -->
 
 <!-- <script type="text/javascript">require.resourceMap({"res":{"js/v4/album.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/album_81c0596.js?max_age=31536000","m":"81c0596"},"js/v4/album_lib.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/album_lib_42ae192.js?max_age=31536000","m":"42ae192"},"js/v4/index.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/index_c4eb2d7.js?max_age=31536000","m":"c4eb2d7"},"js/v4/mv.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mv_28b6275.js?max_age=31536000","m":"28b6275"},"js/v4/mvToplist.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mvToplist_5a97428.js?max_age=31536000","m":"5a97428"},"js/v4/mv_lib.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mv_lib_397139d.js?max_age=31536000","m":"397139d"},"js/v4/mymusic.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mymusic_47250ee.js?max_age=31536000","m":"47250ee"},"js/v4/mymusic_edit.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mymusic_edit_a67c28c.js?max_age=31536000","m":"a67c28c"},"js/v4/player.js":{"deps":["js/common/music.js","js/common/music/scroller.js","js/common/module/webplayer.js","js/common/module/lrcHandler.js","js/common/module/qrcHandler.js","js/common/music/txtpl.js","js/common/music/storage.js"],"url":"//y.gtimg.cn/music/portal/js/v4/player_b4eb8b9.js?max_age=31536000","m":"b4eb8b9"},"js/v4/playlist.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/playlist_11793de.js?max_age=31536000","m":"11793de"},"js/v4/playlist_detail.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/playlist_detail_ce9050c.js?max_age=31536000","m":"ce9050c"},"js/v4/profile.js":{"deps":["js/common/music.js","js/common/music/storage.js"],"url":"//y.gtimg.cn/music/portal/js/v4/profile_0b03fbb.js?max_age=31536000","m":"0b03fbb"},"js/v4/search.js":{"deps":["js/common/music.js","js/common/music/storage.js"],"url":"//y.gtimg.cn/music/portal/js/v4/search_6c6ee5b.js?max_age=31536000","m":"6c6ee5b"},"js/v4/singer.js":{"deps":["js/common/music.js","js/common/music/lib/base.js"],"url":"//y.gtimg.cn/music/portal/js/v4/singer_b1872f9.js?max_age=31536000","m":"b1872f9"},"js/v4/singerlist.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/singerlist_b530ffa.js?max_age=31536000","m":"b530ffa"},"js/v4/song_detail.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/song_detail_1db6650.js?max_age=31536000","m":"1db6650"},"js/v4/toplist.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/toplist_64c1e5e.js?max_age=31536000","m":"64c1e5e"}},"pkg":{}});</script>
  -->
@@ -542,7 +549,3 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 	});
 })(); 
 </script>  -->
-
-
-
-<a href="javascript:;" class="btn_bottom_top sprite js_btn_top" style="display: none;"><span class="icon_txt">返回顶部</span></a><a href="javascript:;" class="btn_bottom_feedback sprite js_btn_feedback"><span class="icon_txt">意见反馈</span></a><a href="http://y.qq.com/portal_old" class="btn_bottom_back js_goto_old" target="_blank">返回旧版</a><div id="divdialog_0"></div></body><div></div></html>

@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -197,13 +198,104 @@ if(window.ActiveXObject || window.msIsStaticHTML){
                     <li class="songlist__header_name">歌曲</li>
                     <li class="songlist__header_author">歌手</li>
                     <li class="songlist__header_time">时长</li>
+                    
                 </ul>
 
-                <ul class="songlist__list"></ul>
+<ul class="songlist__list">
+<!-- HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE -->
+                
+                
+<c:forEach items="${sessionScope.all}" var="song">      
+        
+   <!-- this.className=(this.className+&#39; songlist__item--hover&#39;) this.className=this.className.replace(/ songlist__item--hover/, &#39;&#39;)-->
+   <li mid="108782123" ix="0">
+		<div class="songlist__item" onmouseover="" onmouseout="">
+			<div class="songlist__edit songlist__edit--check">
+			    <input type="checkbox" class="songlist__checkbox">
+			</div> 
+			
+			<div class="songlist__number  songlist__number--top">${song.getSid() }</div>
+			
+		
+		    <div class="songlist__rank"><i class="icon_rank_popular"></i>274%</div>
+		
+		    <div class="songlist__songname">
+			<span class="songlist__songname_txt" style="visibility: visible;">
+			    <a href="http://y.qq.com/portal/album/003zeWC84IaQCM.html" class="songlist__cover album_name" data-albummid="003zeWC84IaQCM" data-albumid="1634630">
+			    <img onerror="this.src=&#39;//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000&#39;;this.onerror=null;" src="./斯柯达汽车·巅峰榜·流行指数 - QQ音乐 - 听我想听的歌!_files/T002R90x90M000003zeWC84IaQCM.jpg" data-original="//y.gtimg.cn/music/photo_new/T002R90x90M000003zeWC84IaQCM.jpg?max_age=2592000" alt="中国新歌声第一季 总决赛" class="songlist__pic" style="display: inline; visibility: visible;"></a>
+			    <a href="http://y.qq.com/portal/song/001nDjqk2uL2eE.html" class="js_song" title="丑八怪 + 给我一个吻 (Live) (加油曲)">${song.getSname() }</a>
+			</span>
+			    
+				<i class="songlist__icon songlist__icon_exclusive" title="独家"></i>
+			    
+			     
+				<a href="http://y.qq.com/portal/mv/v/v002153mjiu.html" class="songlist__icon songlist__icon_mv" target="_blank" title="MV"><span class="icon_txt">MV</span></a>
+			     
+			<div class="mod_list_menu">
+				<a href="javascript:;" class="list_menu__item list_menu__play js_play" title="播放">
+				    <i class="list_menu__icon_play"></i>
+				    <span class="icon_txt">播放</span>
+				</a>
+				<a href="javascript:;" class="list_menu__item list_menu__add js_fav" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
+				    <i class="list_menu__icon_add"></i>
+				    <span class="icon_txt">添加到歌单</span>
+				</a>
+				<a href="javascript:;" class="list_menu__item list_menu__down js_down" title="下载" aria-haspopup="true" data-target="menu_down">
+				    <i class="list_menu__icon_down"></i>
+				    <span class="icon_txt">下载</span>
+				</a>
+				<a href="javascript:;" class="list_menu__item list_menu__share js_share" title="分享" aria-haspopup="true" data-aria="menu_share">
+				    <i class="list_menu__icon_share"></i>
+				    <span class="icon_txt">分享</span>
+				</a>
+			</div>
+		    </div>
+		    <div class="songlist__artist">
+			
+			
+			<a href="http://y.qq.com/portal/singer/002J4UUk29y8BY.html" data-singermid="002J4UUk29y8BY" data-singerid="5062" title="薛之谦" class="singer_name">
+			${song.getArtist().getAname() }</a>
+			
+		    </div>
+		    <div class="songlist__time">04:46</div>
+		    <div class="songlist__other">
+			
+		    </div>
+		</div>
+	</li>
+</c:forEach>        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </ul>
             </div>
 
 
         </div>
+<!-- 这里写排行榜 -->
+<!-- 下面的这个all,就是ToplistServlet中的setAttribute中的all -->
+<!-- var="song"标签:迭代参数的名称。在迭代体中可以使用的变量的名称，
+	  用来表示每一个迭代变量。类型为String。-->
+<ul class="songlist__list">
+  
+       
+        
+    
+</ul>
+        
+        
+        
+        
+        
+        
+        
         
 	<!-- 专辑简介 -->
 	<div class="popup_data_detail" id="popup_data_detail" data-aria="popup"  style="display:none;z-index:10000000000;">

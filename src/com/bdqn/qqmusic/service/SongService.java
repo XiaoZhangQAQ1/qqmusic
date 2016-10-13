@@ -21,7 +21,6 @@ public class SongService implements ISongService {
 	Session session = HibernateSessionFactory.getSession();
 	Transaction tx = session.beginTransaction();
 
-	@Override
 	public List<Song> getSongByName(Object name) {
 		// TODO Auto-generated method stub
 		try {

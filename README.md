@@ -1,40 +1,30 @@
 # qqmusic
 > notice
+	
+	为了避免servlet和struts2的路径撞车  
+	
+	servlet的路径命名逻辑改为:/object.servlet 
+	
+	例如AlbumServlet的路径,由原来的/album改为 
+	
+	/album.servlet 
+	
+	/album经过action类,访问效果和原来一样
+	
+	具体可以到
+	
+	web.xml,com.bdqn.qqmusic.action.AlbumAction,com.bdqn.qqmusic.servlet.AlbumServlet
+	
+	看 
 
- 服务层的命名逻辑由:
-
-接口
-
-```
-com.bdqn.qqmusic.service.ObjectService.java
-```
-
-
-实现类
-
-```
-com.bdqn.qqmusic.service.impl.ObjectServiceImpl.java
-```
- 改成
-
-接口
-
-```
-com.bdqn.qqmusic.service.IObjectService.java
-```
-实现类
-
-```
-com.bdqn.qqmusic.service.ObjectService.java
-```
-不再分包impl包,都放在一起
 
 > log
 
-- **30SEP:**完成只有专辑筛选页的demo
-- **07OCT:**增加了SongDAO，SongService 
-- **08OCT:**添加了record表,company表,genre表,language表,song表,type表的service层,有部分接口的方法未完全实现
-- **09OCT:**修改了src/com/bdqn/qqmusic/service/RecordService.java
+- **10OCT:** 修改了数据库中和歌单有关的表,同时加了点数据更新了qqmusic.sql,添加了struts2
+- **09OCT:** 修改了src/com/bdqn/qqmusic/service/RecordService.java
+- **08OCT:** 添加了record表,company表,genre表,language表,song表,type表的service层,有部分接口的方法未完全实现
+- **07OCT:** 增加了SongDAO，SongService 
+- **30SEP:** 完成只有专辑筛选页的demo
 
 > link
 

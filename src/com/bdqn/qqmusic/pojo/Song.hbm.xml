@@ -10,10 +10,30 @@
             <column name="sid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="artist" class="com.bdqn.qqmusic.pojo.Artist" fetch="select">
+        
+
+        
+        
+        
+ 
+        
+        
+        
+        
+        <many-to-one name="artist" class="com.bdqn.qqmusic.pojo.Artist" fetch="select" lazy="false">
+        
+        
+        
+        
+        
+        
+
+        
+        
+
             <column name="said" not-null="true" />
         </many-to-one>
-        <many-to-one name="record" class="com.bdqn.qqmusic.pojo.Record" fetch="select">
+        <many-to-one name="record" class="com.bdqn.qqmusic.pojo.Record" fetch="select" lazy="false">
             <column name="srid" not-null="true" />
         </many-to-one>
         <property name="sname" type="java.lang.String">

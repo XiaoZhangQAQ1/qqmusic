@@ -10,7 +10,7 @@
             <column name="aid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="nation" class="com.bdqn.qqmusic.pojo.Nation" fetch="select">
+        <many-to-one name="nation" class="com.bdqn.qqmusic.pojo.Nation" fetch="select" lazy="false">
             <column name="anid" not-null="true" />
         </many-to-one>
         <property name="aname" type="java.lang.String">

@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -204,14 +205,16 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 				
 
 					
+					<c:forEach items="${sessionScope.name}" var="song" > 
                         <li>
                             <div class="songlist__item">
                                 <div class="songlist__edit songlist__edit--check">
                                     <input type="checkbox" class="songlist__checkbox">
                                 </div>
-                                <div class="songlist__number">1</div>
+                                <div class="songlist__number">${song.getSid()}</div>
                                 <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/000Dzwjz1S88CO.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/000Dzwjz1S88CO.html'" tppabs="http://y.qq.com/portal/song/000Dzwjz1S88CO.html" title="靠近 + 命中注定 + 报告班长 + 整晚的音乐 (Live)">靠近 + 命中注定 + 报告班长 + 整晚的音乐 (Live)</a></span>
+                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/000Dzwjz1S88CO.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/000Dzwjz1S88CO.html'" tppabs="http://y.qq.com/portal/song/000Dzwjz1S88CO.html" title="靠近 + 命中注定 + 报告班长 + 整晚的音乐 (Live)">
+                                    ${song.getSname()}</a></span>
                                     <div class="mod_list_menu">
                                         <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
                                             <i class="list_menu__icon_play"></i>
@@ -234,7 +237,8 @@ if(window.ActiveXObject || window.msIsStaticHTML){
                                 <div class="songlist__artist">
 					
 					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/000vYUqh1SqjQQ.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/000vYUqh1SqjQQ.html'" tppabs="http://y.qq.com/portal/singer/000vYUqh1SqjQQ.html" title="华语群星" class="singer_name">华语群星</a>
+					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/000vYUqh1SqjQQ.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/000vYUqh1SqjQQ.html'" tppabs="http://y.qq.com/portal/singer/000vYUqh1SqjQQ.html" title="华语群星" class="singer_name">
+					${song.getArtist().getAname()}</a>
 					
                                 </div>
                                 <div class="songlist__time">06:18</div>
@@ -243,512 +247,29 @@ if(window.ActiveXObject || window.msIsStaticHTML){
                             </div>
                         </li>
 			
-                        <li>
-                            <div class="songlist__item songlist__item--even ">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">2</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/004Czaf43Y7B1G.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/004Czaf43Y7B1G.html'" tppabs="http://y.qq.com/portal/song/004Czaf43Y7B1G.html" title="白天不懂夜的黑 (Live)">白天不懂夜的黑 (Live)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/000vYUqh1SqjQQ.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/000vYUqh1SqjQQ.html'" tppabs="http://y.qq.com/portal/singer/000vYUqh1SqjQQ.html" title="华语群星" class="singer_name">华语群星</a>
-					
-                                </div>
-                                <div class="songlist__time">03:43</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                     </c:forEach>
 			
-                        <li>
-                            <div class="songlist__item">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">3</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/000CrZCR2pXoCH.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/000CrZCR2pXoCH.html'" tppabs="http://y.qq.com/portal/song/000CrZCR2pXoCH.html" title="Fight Song (Live) (李佩玲胜出)">Fight Song (Live) (李佩玲胜出)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/000hc3fn3v6Enj.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/000hc3fn3v6Enj.html'" tppabs="http://y.qq.com/portal/singer/000hc3fn3v6Enj.html" title="李佩玲" class="singer_name">李佩玲</a>
-					
-                                </div>
-                                <div class="songlist__time">03:36</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                      
 			
-                        <li>
-                            <div class="songlist__item songlist__item--even ">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">4</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/001MqNrr3wtu8V.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/001MqNrr3wtu8V.html'" tppabs="http://y.qq.com/portal/song/001MqNrr3wtu8V.html" title="逃亡 (Live) (王闯淘汰)">逃亡 (Live) (王闯淘汰)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/000D9IBA1fZ1J7.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/000D9IBA1fZ1J7.html'" tppabs="http://y.qq.com/portal/singer/000D9IBA1fZ1J7.html" title="王闯" class="singer_name">王闯</a>
-					
-                                </div>
-                                <div class="songlist__time">04:11</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                       
 			
-                        <li>
-                            <div class="songlist__item">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">5</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/001z3DRM0C5fJk.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/001z3DRM0C5fJk.html'" tppabs="http://y.qq.com/portal/song/001z3DRM0C5fJk.html" title="枫 (Live) (杨搏淘汰)">枫 (Live) (杨搏淘汰)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/000tCjkO03wtAn.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/000tCjkO03wtAn.html'" tppabs="http://y.qq.com/portal/singer/000tCjkO03wtAn.html" title="杨搏" class="singer_name">杨搏</a>
-					
-                                </div>
-                                <div class="songlist__time">04:40</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                      
 			
-                        <li>
-                            <div class="songlist__item songlist__item--even ">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">6</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/002x8WNa3RJoTL.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/002x8WNa3RJoTL.html'" tppabs="http://y.qq.com/portal/song/002x8WNa3RJoTL.html" title="黄豆 (Live) (杨美娜胜出)">黄豆 (Live) (杨美娜胜出)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/0040sbPG0k5k48.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/0040sbPG0k5k48.html'" tppabs="http://y.qq.com/portal/singer/0040sbPG0k5k48.html" title="杨美娜" class="singer_name">杨美娜</a>
-					
-                                </div>
-                                <div class="songlist__time">03:42</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                      
 			
-                        <li>
-                            <div class="songlist__item">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">7</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/00110qTP0DuyZq.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/00110qTP0DuyZq.html'" tppabs="http://y.qq.com/portal/song/00110qTP0DuyZq.html" title="Dirty Mind + 不潮不用花钱 (Live) (导师挽救)">Dirty Mind + 不潮不用花钱 (Live) (导师挽救)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/003cHsJw40aXQ3.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/003cHsJw40aXQ3.html'" tppabs="http://y.qq.com/portal/singer/003cHsJw40aXQ3.html" title="万妮达" class="singer_name">万妮达</a>
-					
-                                </div>
-                                <div class="songlist__time">03:40</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                       
+                       
 			
-                        <li>
-                            <div class="songlist__item songlist__item--even ">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">8</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/0047t9P03A5tfP.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/0047t9P03A5tfP.html'" tppabs="http://y.qq.com/portal/song/0047t9P03A5tfP.html" title="静心等 (Live) (吉克皓胜出)">静心等 (Live) (吉克皓胜出)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/000tK1RE1PUwEw.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/000tK1RE1PUwEw.html'" tppabs="http://y.qq.com/portal/singer/000tK1RE1PUwEw.html" title="吉克皓" class="singer_name">吉克皓</a>
-					
-                                </div>
-                                <div class="songlist__time">02:51</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                       
 			
-                        <li>
-                            <div class="songlist__item">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">9</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/001GB9YP3mnKTV.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/001GB9YP3mnKTV.html'" tppabs="http://y.qq.com/portal/song/001GB9YP3mnKTV.html" title="友情岁月 (Live) (汪晨蕊胜出)">友情岁月 (Live) (汪晨蕊胜出)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/001Zi8pD2Xj9jM.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/001Zi8pD2Xj9jM.html'" tppabs="http://y.qq.com/portal/singer/001Zi8pD2Xj9jM.html" title="汪晨蕊" class="singer_name">汪晨蕊</a>
-					
-                                </div>
-                                <div class="songlist__time">03:36</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                       
 			
-                        <li>
-                            <div class="songlist__item songlist__item--even ">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">10</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/001WubLt0HpQDx.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/001WubLt0HpQDx.html'" tppabs="http://y.qq.com/portal/song/001WubLt0HpQDx.html" title="Happy (Live) (导师挽救)">Happy (Live) (导师挽救)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/00239Rxf47XMYk.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/00239Rxf47XMYk.html'" tppabs="http://y.qq.com/portal/singer/00239Rxf47XMYk.html" title="赵小熙" class="singer_name">赵小熙</a>
-					
-                                </div>
-                                <div class="songlist__time">03:54</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                      
+                        
 			
-                        <li>
-                            <div class="songlist__item">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">11</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/000PgtCJ2Aoeao.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/000PgtCJ2Aoeao.html'" tppabs="http://y.qq.com/portal/song/000PgtCJ2Aoeao.html" title="流着泪说分手 (Live) (苏立生胜出)">流着泪说分手 (Live) (苏立生胜出)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/004EoP1g2sL6pO.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/004EoP1g2sL6pO.html'" tppabs="http://y.qq.com/portal/singer/004EoP1g2sL6pO.html" title="苏立生" class="singer_name">苏立生</a>
-					
-                                </div>
-                                <div class="songlist__time">04:36</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                     
 			
-                        <li>
-                            <div class="songlist__item songlist__item--even ">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">12</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/0011jMLc3X3qv4.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/0011jMLc3X3qv4.html'" tppabs="http://y.qq.com/portal/song/0011jMLc3X3qv4.html" title="醉拳 (Live) (姚希淘汰)">醉拳 (Live) (姚希淘汰)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/003chnx221IOz3.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/003chnx221IOz3.html'" tppabs="http://y.qq.com/portal/singer/003chnx221IOz3.html" title="姚希" class="singer_name">姚希</a>
-					
-                                </div>
-                                <div class="songlist__time">03:52</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
-			
-                        <li>
-                            <div class="songlist__item">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">13</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/0048m0gJ3O1ooa.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/0048m0gJ3O1ooa.html'" tppabs="http://y.qq.com/portal/song/0048m0gJ3O1ooa.html" title="不敢停止想你 (Live) (赵小熙胜出)">不敢停止想你 (Live) (赵小熙胜出)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/00239Rxf47XMYk.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/00239Rxf47XMYk.html'" tppabs="http://y.qq.com/portal/singer/00239Rxf47XMYk.html" title="赵小熙" class="singer_name">赵小熙</a>
-					
-                                </div>
-                                <div class="songlist__time">02:06</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
-			
-                        <li>
-                            <div class="songlist__item songlist__item--even ">
-                                <div class="songlist__edit songlist__edit--check">
-                                    <input type="checkbox" class="songlist__checkbox">
-                                </div>
-                                <div class="songlist__number">14</div>
-                                <div class="songlist__songname">
-                                    <span class="songlist__songname_txt"><a href="javascript:if(confirm('http://y.qq.com/portal/song/000B5s6220ENoa.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/song/000B5s6220ENoa.html'" tppabs="http://y.qq.com/portal/song/000B5s6220ENoa.html" title="焚心以火 (Live) (万妮达淘汰)">焚心以火 (Live) (万妮达淘汰)</a></span>
-                                    <div class="mod_list_menu">
-                                        <a href="javascript:if(confirm('http://y.qq.com/portal/player.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/player.html'" tppabs="http://y.qq.com/portal/player.html" class="list_menu__item list_menu__play" title="播放">
-                                            <i class="list_menu__icon_play"></i>
-                                            <span class="icon_txt">播放</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__add" title="添加到歌单" aria-haspopup="true" data-target="menu_add">
-                                            <i class="list_menu__icon_add"></i>
-                                            <span class="icon_txt">添加到歌单</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__down" title="下载" aria-haspopup="true" data-target="menu_down">
-                                            <i class="list_menu__icon_down"></i>
-                                            <span class="icon_txt">下载</span>
-                                        </a>
-                                        <a href="javascript:;" class="list_menu__item list_menu__share" title="分享" aria-haspopup="true" data-aria="menu_share">
-                                            <i class="list_menu__icon_share"></i>
-                                            <span class="icon_txt">分享</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="songlist__artist">
-					
-					
-					<a href="javascript:if(confirm('http://y.qq.com/portal/singer/003cHsJw40aXQ3.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/003cHsJw40aXQ3.html'" tppabs="http://y.qq.com/portal/singer/003cHsJw40aXQ3.html" title="万妮达" class="singer_name">万妮达</a>
-					
-                                </div>
-                                <div class="songlist__time">02:38</div>
-                                <div class="songlist__other">
-                                </div>
-                            </div>
-                        </li>
+                       
 			
                     </ul>
 			

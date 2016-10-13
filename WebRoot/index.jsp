@@ -330,7 +330,7 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 }</script>
 <div class="mod_header">
     <div class="section_inner">
-        <h1 class="qqmusic_title"><a href="index.htm" tppabs="http://y.qq.com/"><img srcset="//y.gtimg.cn/mediastyle/yqq/img/logo@2x.png 2x" src="../y.gtimg.cn/mediastyle/yqq/img/logo.png" tppabs="http://y.gtimg.cn/mediastyle/yqq/img/logo.png" alt="QQ音乐" class="qqmusic_logo"/></a></h1>
+        <h1 class="qqmusic_title"><a href="index.htm" tppabs="http://y.qq.com/"><img srcset="//y.gtimg.cn/mediastyle/yqq/img/logo@2x.png 2x" src="images/logo.png" tppabs="http://y.gtimg.cn/mediastyle/yqq/img/logo.png" alt="QQ音乐" class="qqmusic_logo"/></a></h1>
         <!-- 导航 S -->
         <ul class="mod_top_nav" role="nav">
             <li class="top_nav__item top_nav__item--room">
@@ -436,14 +436,14 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 		    
                     <li class="playlist__item slide__item  playlist__item--even " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="001xRWE82ideg7" data-albumid="1620470">
                         <div class="playlist__item_box">
-                            <div class="playlist__cover mod_cover"><a href="portal/album/001xRWE82ideg7.html" tppabs="http://y.qq.com/portal/album/001xRWE82ideg7.html" class="js_album" data-albummid="001xRWE82ideg7" data-albumid="1620470"><img src="../y.gtimg.cn/music/photo_new/T002R300x300M000001xRWE82ideg7.jpg-max_age=2592000.jpg" tppabs="http://y.gtimg.cn/music/photo_new/T002R300x300M000001xRWE82ideg7.jpg?max_age=2592000" alt="跳到太阳升起来" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+<!-- Cover Photo -->                            <div class="playlist__cover mod_cover"><a href="portal/album/001xRWE82ideg7.html" tppabs="http://y.qq.com/portal/album/001xRWE82ideg7.html" class="js_album" data-albummid="001xRWE82ideg7" data-albumid="1620470"><img src="images/PUG.png" tppabs="http://y.gtimg.cn/music/photo_new/T002R300x300M000001xRWE82ideg7.jpg?max_age=2592000" alt="跳到太阳升起来" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
                             <h4 class="playlist__title">
-				    <span class="playlist__title_txt"><a href="portal/album/001xRWE82ideg7.html" tppabs="http://y.qq.com/portal/album/001xRWE82ideg7.html" class="js_album" data-albummid="001xRWE82ideg7" data-albumid="1620470">跳到太阳升起来</a></span>
+<!-- Title -->				    <span class="playlist__title_txt"><a href="portal/album/001xRWE82ideg7.html" tppabs="http://y.qq.com/portal/album/001xRWE82ideg7.html" class="js_album" data-albummid="001xRWE82ideg7" data-albumid="1620470">XXXXX  +++  XXXXX</a></span>
 				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="001xRWE82ideg7"><span class="icon_txt">更多</span></a>
 			    </h4>
                             
                             <div class="playlist__author">
-                                    <a href="portal/singer/001oXbjs29oPul.html" tppabs="http://y.qq.com/portal/singer/001oXbjs29oPul.html" class="js_singer" data-singermid="22874" title="孙子涵">孙子涵</a>
+<!-- Singer Name -->                                    <a href="portal/singer/001oXbjs29oPul.html" tppabs="http://y.qq.com/portal/singer/001oXbjs29oPul.html" class="js_singer" data-singermid="22874" title="孙子涵">Umm...</a>
                                 </div>
                         </div>
                     </li>

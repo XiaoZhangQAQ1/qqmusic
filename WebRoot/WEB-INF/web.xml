@@ -25,15 +25,32 @@
     <servlet-name>AlbumServlet</servlet-name>
     <servlet-class>com.bdqn.qqmusic.servlet.AlbumServlet</servlet-class>
   </servlet>
+
   
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>PlaylistServlet</servlet-name>
     <servlet-class>com.bdqn.qqmusic.servlet.PlaylistServlet</servlet-class>
-  </servlet>
+    </servlet>
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AlbumCo</servlet-name>
+    <servlet-class>com.bdqn.qqmusic.servlet.AlbumCo</servlet-class>
+    </servlet>
 
 
+
+	<servlet>  
+    	<servlet-name>SingerListServlet</servlet-name>
+    	<servlet-class>com.bdqn.qqmusic.servlet.SingerListServlet</servlet-class>
+  	</servlet>
+	<servlet-mapping>
+		<servlet-name>SingerListServlet</servlet-name>
+		<url-pattern>/singerlist.servlet</url-pattern>
+	</servlet-mapping>
 
 <!-- 	<filter-mapping>
 		<filter-name>CharaterEncodingFilter</filter-name>
@@ -41,13 +58,51 @@
 	</filter-mapping> -->
   <servlet-mapping>
     <servlet-name>AlbumServlet</servlet-name>
-    <url-pattern>/album</url-pattern>
-  </servlet-mapping>
+    <url-pattern>/album.servlet</url-pattern>
+  </servlet-mapping>	
+
+  
+ 
   <servlet-mapping>
     <servlet-name>PlaylistServlet</servlet-name>
-    <url-pattern>/playlist</url-pattern>
+    <url-pattern>/playlist.servlet</url-pattern>
   </servlet-mapping>		
+
+
+    
+
+	  
+ <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ToplistServlet</servlet-name>
+    <servlet-class>com.bdqn.qqmusic.servlet.ToplistServlet</servlet-class>
+  </servlet>
+
+ <servlet-mapping>
+    <servlet-name>ToplistServlet</servlet-name>
+    <url-pattern>/toplist.servlet</url-pattern>
+  </servlet-mapping>	
+
+  <servlet-mapping>
+    <servlet-name>AlbumCo</servlet-name>
+    <url-pattern>/albumCo.servlet</url-pattern>
+  </servlet-mapping>
+  
+
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+
+  <filter>
+  	<filter-name>struts2</filter-name>
+  	<filter-class>
+  		org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+  	</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts2</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
 </web-app>

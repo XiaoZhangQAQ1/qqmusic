@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -212,17 +213,30 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 	<div id="mod-singerlist">
         <div class="mod_singer_list js_avtar_list">
             <ul class="singer_list__list">
-                        
+                 
+                 <!-- src="../../y.gtimg.cn/music/photo_new/T001R300x300M000002J4UUk29y8BY.jpg-max_age=2592000.jpg" tppabs="http://y.gtimg.cn/music/photo_new/T001R300x300M000002J4UUk29y8BY.jpg?max_age=2592000" alt="薛之谦"> -->
+                 <c:forEach items="${listArtist}" var="listArtist" end="9" >       
+                
                 <li class="singer_list__item">
                     <div class="singer_list__item_box">
                         <a href="javascript:if(confirm('http://y.qq.com/portal/singer/002J4UUk29y8BY.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/002J4UUk29y8BY.html#stat=y_new.singerlist.singerpic'" tppabs="http://y.qq.com/portal/singer/002J4UUk29y8BY.html#stat=y_new.singerlist.singerpic" class="singer_list__cover js_singer" hidefocus="true" data-singermid="002J4UUk29y8BY" data-singerid="5062" title="薛之谦">
-                            <img class="singer_list__pic" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=31536000'" src="../../y.gtimg.cn/music/photo_new/T001R300x300M000002J4UUk29y8BY.jpg-max_age=2592000.jpg" tppabs="http://y.gtimg.cn/music/photo_new/T001R300x300M000002J4UUk29y8BY.jpg?max_age=2592000" alt="薛之谦">
+                            <img class="singer_list__pic" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=31536000'" 
+                            src="C:\Users\Administrator\git\qqmusic\WebRoot\images\T002R300x300M000000PMWZh1aRkv6.jpg" tppabs="http://y.gtimg.cn/music/photo_new/T001R300x300M000002J4UUk29y8BY.jpg?max_age=2592000" alt="薛之谦">
                         </a>
-                        <h3 class="singer_list__title"><a href="javascript:if(confirm('http://y.qq.com/portal/singer/002J4UUk29y8BY.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/002J4UUk29y8BY.html#stat=y_new.singerlist.singername'" tppabs="http://y.qq.com/portal/singer/002J4UUk29y8BY.html#stat=y_new.singerlist.singername" data-singermid="002J4UUk29y8BY" data-id="5062" class="js_singer" title="薛之谦">薛之谦</a></h3>
+                        <h3 class="singer_list__title"><a href="javascript:if(confirm('http://y.qq.com/portal/singer/002J4UUk29y8BY.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/002J4UUk29y8BY.html#stat=y_new.singerlist.singername'" tppabs="http://y.qq.com/portal/singer/002J4UUk29y8BY.html#stat=y_new.singerlist.singername" data-singermid="002J4UUk29y8BY" data-id="5062" class="js_singer" title="薛之谦">         
+                            <%-- ${sessionScope.listArtist.get(0).getAname()} --%>                           
+                            <b>${listArtist.getAname()}</b>                            
+                            </a></h3>
                     </div>
                 </li>
+                </c:forEach>
+              <%--  <c:forEach items="${side_list_1}" var="side_list_1" end="5" >
+      		<li>
+      			<a href="servlet/ContextServlet?nid=${side_list_1.getNid()}"><b>${side_list_1.getnTitle()}</b></a>
+      		</li>
+      			</c:forEach> --%>
 		  
-                <li class="singer_list__item">
+                <!-- <li class="singer_list__item">
                     <div class="singer_list__item_box">
                         <a href="javascript:if(confirm('http://y.qq.com/portal/singer/0025NhlN2yWrP4.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/0025NhlN2yWrP4.html#stat=y_new.singerlist.singerpic'" tppabs="http://y.qq.com/portal/singer/0025NhlN2yWrP4.html#stat=y_new.singerlist.singerpic" class="singer_list__cover js_singer" hidefocus="true" data-singermid="0025NhlN2yWrP4" data-singerid="4558" title="周杰伦">
                             <img class="singer_list__pic" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=31536000'" src="../../y.gtimg.cn/music/photo_new/T001R300x300M0000025NhlN2yWrP4.jpg-max_age=2592000.jpg" tppabs="http://y.gtimg.cn/music/photo_new/T001R300x300M0000025NhlN2yWrP4.jpg?max_age=2592000" alt="周杰伦">
@@ -301,7 +315,7 @@ if(window.ActiveXObject || window.msIsStaticHTML){
                         </a>
                         <h3 class="singer_list__title"><a href="javascript:if(confirm('http://y.qq.com/portal/singer/001P6FhW0CDEDW.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ���������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://y.qq.com/portal/singer/001P6FhW0CDEDW.html#stat=y_new.singerlist.singername'" tppabs="http://y.qq.com/portal/singer/001P6FhW0CDEDW.html#stat=y_new.singerlist.singername" data-singermid="001P6FhW0CDEDW" data-id="11712" class="js_singer" title="乔任梁">乔任梁</a></h3>
                     </div>
-                </li>
+                </li> -->
 		  
             </ul>
         </div>
