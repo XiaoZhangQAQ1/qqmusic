@@ -109,12 +109,11 @@ public class Record implements java.io.Serializable {
 		this.rmainartist = rmainartist;
 	}
 
-	
-	public Date getRdate() {
-		
+
+	public Date getRdate(){
 		return this.rdate;
 	}
-
+	
 	public void setRdate(Date rdate) {
 		this.rdate = rdate;
 	}

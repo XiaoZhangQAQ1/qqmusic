@@ -10,12 +10,12 @@ import com.bdqn.qqmusic.service.RecordService;
 
 public class Test {
 	public static void main(String[] args) {
-		User user=new User();
-		user.setUid(2);
-		SongListManageDAO test=new SongListManageDAO();
-		System.out.println(test.getFavList(user).getSmname());
-		
-		
+//		User user=new User();
+//		user.setUid(2);
+//		SongListManageDAO test=new SongListManageDAO();
+//		System.out.println(test.getFavList(user).getSmname());
+//		
+//		
 		
 		
 		
@@ -24,13 +24,13 @@ public class Test {
 		
 		
 		//record表getAll遍历
-//		RecordService test = new RecordService();
-//		List<Record> list = null;
-//		list = test.getAllRecord();
-//		for (Record record : list) {
-//			System.out.println(record.getRmainartist() + record.getRname()
-//					+ record.getRdate());
-//		}
+		RecordService test = new RecordService();
+		List<Record> list = null;
+		list = test.getAllRecord();
+		for (Record record : list) {
+			System.out.println(record.getRmainartist() + record.getRname()
+					+ record.getRdate()+ record.getRcoverpath());
+		}
 	
 	
 	
