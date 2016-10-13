@@ -68,7 +68,7 @@ public class RecordService implements IRecordService {
 		List<Record> list = new ArrayList<Record>();
 		RecordDAO recordDAO = new RecordDAO();
 		try {
-			list = recordDAO.findByProperty1("pageNum", line);
+			list = recordDAO.getRecordsByPageNum(pageNum, line);
 			tx.commit();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
@@ -110,7 +110,7 @@ public class RecordService implements IRecordService {
 		List<Record> list = new ArrayList<Record>();
 		RecordDAO recordDAO = new RecordDAO();
 		try {
-			list = recordDAO.findByProperty1("pageNum", line);
+			list = recordDAO.getRecordsByGenrePageNum(genre, pageNum, line);
 			tx.commit();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
@@ -299,4 +299,11 @@ public class RecordService implements IRecordService {
 		return (Record) R.get(0);
 	}
 
+	
+	//专辑页面的分页显示----------
+	
+	//每一页专辑页面所显示的专辑条数--20条
+	
+	
+	
 }

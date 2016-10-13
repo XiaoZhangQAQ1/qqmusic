@@ -48,7 +48,6 @@
 	</filter-mapping> -->
   <servlet-mapping>
     <servlet-name>AlbumServlet</servlet-name>
-
     <url-pattern>/album.servlet</url-pattern>
   </servlet-mapping>	
 

@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
@@ -396,11 +396,16 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 			   class="js_album" 
 			   data-stat="y_new.album_lib.album_pic" 
 			   data-albummid="001VHkqi3kBVce">
-				<img src="images/ly.jpg"  
-					 alt="琅琊榜 电视剧原声带" 
+			   
+			
+			   
+			   
+
+				<img src="images/Album/${record.getRcoverpath()}"  
+					 alt="images" 
 					 class="playlist__pic" 
 					 style="display: block; 
-					 visibility: visible;">
+					 visibility: visible;">${path } ${record.getRcoverpath()}
 				<i class="mod_cover__icon_play js_play" data-stat="y_new.album_lib.album_play"></i>
 			</a>
 			

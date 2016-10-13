@@ -2,6 +2,7 @@ package com.bdqn.qqmusic.service;
 
 import java.util.List;
 
+
 import com.bdqn.qqmusic.factory.DAOFactory;
 import com.bdqn.qqmusic.pojo.Company;
 import com.bdqn.qqmusic.pojo.Genre;
@@ -37,4 +38,6 @@ public interface IRecordService {
 	public void saveOrUpdateRecord(Record record);
 	
 	public void deleteRecord(Record record);
+	
+
 }
