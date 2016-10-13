@@ -49,11 +49,13 @@ public class AlbumServlet extends HttpServlet {
 		request.getSession().setAttribute("path", path);
 		request.getSession().setAttribute("all", mod_playlist);
 
+
 		//弄了struts不用在servlet跳转,
 		
 		response.sendRedirect("../qqmusic/album.jsp");
 		out.flush();
 		out.close();
+
 
 	}
 

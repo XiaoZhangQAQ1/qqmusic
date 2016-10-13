@@ -139,8 +139,26 @@ public class ArtistService implements IArtistService {
 				tx.rollback();
 			}finally{
 				session.close();
-			}
+			}			
+		}	
+		
+		//9 属性+属性内容查询
+		public List<Artist> findByProperty(String propertyName, Object value){
 			
-		}		
+			Session session=HibernateSessionFactory.getSession();
+			Transaction tx=session.beginTransaction();
+			List<Artist> list=null;
+			try{
+				list=artistDAO.findByProperty(propertyName, value);
+				tx.commit();
+			}catch(RuntimeException e){
+				e.printStackTrace();
+				tx.rollback();
+			}finally{
+				session.close();
+			}
+			return list;
+			
+		}
 
 }

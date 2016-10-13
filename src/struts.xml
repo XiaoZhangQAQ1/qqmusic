@@ -24,8 +24,9 @@
 	<package name="default" namespace="/" extends="struts-default">
 	    
 	    <!-- "我的音乐"profile页action -->
-		<action name="admin"  class="com.bdqn.qqmusic.action.ProfileAction" >
+		<action name="profile"  class="com.bdqn.qqmusic.action.ProfileAction" >
 			<result name="success" >profile.jsp</result>
+			<!-- 检测登录状态待完成 -->
 			<result name="error">profile.jsp</result>	
 		</action>
 		
@@ -34,5 +35,21 @@
 			<result name="success" type="redirect" >album.jsp</result>
 		</action>
 		
+		<!-- "音乐库"singerlist页action -->
+		<action name="singerlist" class="com.bdqn.qqmusic.action.SingerListAction" >
+			<result name="singerlist"  >testA.jsp</result>
+		</action>
+				
 	</package>
+	
+		<package name="json" namespace="/" extends="json-default">
+		<action name="testJson" class="com.bdqn.qqmusic.action.SingerListAction">			
+			<result name="singerlist" type="json" >
+				<param name="includeProperties">
+					list.*
+				</param>
+			</result>
+		</action>
+	</package>
+	
 </struts>    
