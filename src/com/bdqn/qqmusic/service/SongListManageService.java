@@ -5,12 +5,17 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.bdqn.qqmusic.factory.HibernateSessionFactory;
 import com.bdqn.qqmusic.pojo.SongDAO;
 import com.bdqn.qqmusic.pojo.SongList;
 import com.bdqn.qqmusic.pojo.SongListDAO;
 import com.bdqn.qqmusic.pojo.SongListManage;
 import com.bdqn.qqmusic.pojo.SongListManageDAO;
 import com.bdqn.qqmusic.pojo.User;
+import com.sun.xml.internal.txw2.TXW;
 
 public class SongListManageService implements ISongListManageSevice {
 	
@@ -24,7 +29,7 @@ public class SongListManageService implements ISongListManageSevice {
 	
 	@Override
 	public List<SongListManageService> showFavList(User user, int page) {
-		// TODO Auto-generated method stub
+		
 		//new歌单管理dao
 		SongListManageDAO getfavList = new SongListManageDAO();
 		//调用获取favor歌单方法
@@ -40,17 +45,34 @@ public class SongListManageService implements ISongListManageSevice {
 		//new 结果集合
 		List<SongListManageService> result=new ArrayList<SongListManageService>();
 		//装入service层
-		for (int i=1;i<raw.size();i++) {
-			//遍历元素
-			SongList songList=raw.get(i);
-			//服务层实例
-			SongListManageService instance=new SongListManageService();
-			instance.setSongName(songList.getSong().getSname());
-			instance.setArtistName(songList.getSong().getArtist().getAname());
-			instance.setRecordName(songList.getSong().getRecord().getRname());
-			instance.setDuration(songList.getSong().getSduration());
-			result.add(i, instance);
+		Session session=null;
+		Transaction tx=null;
+		try {
+			session=HibernateSessionFactory.getSession();
+			tx=session.beginTransaction();
+			for (int i=0;i<raw.size();i++) {
+				//遍历元素
+				SongList songList=raw.get(i);
+				//服务层实例
+				SongListManageService instance=new SongListManageService();
+				//打包
+				instance.setSongName(songList.getSong().getSname());
+				instance.setArtistName(songList.getSong().getArtist().getAname());
+				instance.setRecordName(songList.getSong().getRecord().getRname());
+				instance.setDuration(songList.getSong().getSduration());
+				//装箱
+				result.add(i,instance);
+			}
+			tx.commit();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			tx.rollback();
+		}finally{
+			session.close();
 		}
+		
+		
 		return result;
 	}
 	

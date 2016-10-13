@@ -579,6 +579,8 @@
 						<!-- favor ul列表 -->
 						<ul class="songlist__list">
 							<!-- 开始favor列表遍历 -->
+						<s:iterator value="#session.SLMSSFav" var="list" status="index" >	
+						
 							<li mid="102796884" ix="30">
 								<div class="js_song_li songlist__item"
 									onmouseover="bodyClickOff();this.className=(this.className+' songlist__item--hover')"
@@ -588,10 +590,15 @@
 									</div>
 									<!-- 歌曲名字 -->
 									<div class="songlist__songname">
-										<span class="songlist__songname_txt"><a
-											href="http://y.qq.com/portal/song/002QyILG4ROqHS.html"
-											class="js_song" title="Closer">Closer</a> </span> <i
-											class="songlist__icon songlist__icon_exclusive" title="独家"></i>
+										<span class="songlist__songname_txt">
+										<a  href="http://y.qq.com/portal/song/002QyILG4ROqHS.html"
+											class="js_song" title="list.songName">
+											
+											<s:property value="list.songName" />
+											
+										</a> 
+										</span> 
+										<i class="songlist__icon songlist__icon_exclusive" title="独家"></i>
 										<a href="http://y.qq.com/portal/mv/v/a001865s89e.html"
 											class="songlist__icon songlist__icon_mv" target="_blank"
 											title="MV"><span class="icon_txt">MV</span> </a>
@@ -616,13 +623,17 @@
 									<div class="songlist__artist">
 										<a href="http://y.qq.com/portal/singer/000GDFdW1he8eS.html"
 											data-singermid="000GDFdW1he8eS" data-singerid="182742"
-											title="Lemaitre" class="singer_name">Lemaitre</a>
+											title="list.artistName" class="singer_name">
+										
+											<s:property value="list.artistName"/>
+										
+										</a>
 											
 											<!-- 有多个歌手时,用  "/" 分隔 这里暂不实现 -->
-										<a
+										<a  display="none"
 											href="http://y.qq.com/portal/singer/001P2ODl3YGyip.html"
 											data-singermid="001P2ODl3YGyip" data-singerid="999775"
-											title="Jennie A." class="singer_name">Jennie A.</a>
+											title="" class="singer_name"></a>
 									</div>
 									<!-- 专辑名字 -->
 									<div class="songlist__album">
@@ -630,7 +641,8 @@
 											href="http://y.qq.com/portal/album/0017Wxwf08P1KF.html"
 											title="Closer" class="album_name">Closer</a>
 									</div>
-									<div class="songlist__time">04:31</div>
+									<!-- 音轨长度 -->
+									<div class="songlist__time"><s:date name="时长" format=" mm:ss" var="list.duration"  ></s:date></div>
 									<div class="songlist__other">
 										<i class="icon_sosomusic">无版权</i>
 									</div>
@@ -638,6 +650,7 @@
 										data-id="102796884"><span class="icon_txt">删除</span> </a>
 								</div>
 							</li>
+							</s:iterator>
 							<!-- 结束favor列表遍历 -->	
 						</ul>
 					</div>
