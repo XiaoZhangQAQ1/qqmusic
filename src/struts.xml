@@ -25,7 +25,7 @@
 	    
 	    <!-- "我的音乐"profile页action -->
 		<action name="profile"  class="com.bdqn.qqmusic.action.ProfileAction" >
-			<result name="success" >profile.jsp</result>
+			<result name="success" type="dispatcher" >profile.jsp</result>
 			<!-- 检测登录状态待完成 -->
 			<result name="error">profile.jsp</result>	
 		</action>

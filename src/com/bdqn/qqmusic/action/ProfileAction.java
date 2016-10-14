@@ -50,14 +50,19 @@ public class ProfileAction extends ActionSupport{
 		// TODO Auto-generated method stub
 		SongListManageService SLMS=new SongListManageService();
 		List<SongListManageService> songlist__list=new ArrayList<SongListManageService>();
+		
+		
+		
 		//没参数就默认第一页
 		if(page==null){
 			 this.setPage(1);
 		}
 		
+		System.out.println("请求页数:"+page);
+		
 		songlist__list=SLMS.showFavList(user, page);
 		//request.put("key",value);
-		session.put("SLMSSFav", songlist__list);
+		request.put("SLMSSFav", songlist__list);
 		
 		
 		/**************分页按钮****************/

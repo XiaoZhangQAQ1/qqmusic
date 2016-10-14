@@ -1,11 +1,8 @@
 package com.bdqn.qqmusic.pojo;
 
 import com.bdqn.qqmusic.dao.BaseDAO;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import org.hibernate.LockMode;
 import org.hibernate.Query;
 import org.hibernate.criterion.Example;
@@ -38,20 +35,20 @@ public class SongListDAO extends BaseDAO {
 		String HQL="from SongList songList " +
 				"where songList.songListManage.smid=:smid " +
 				"order by slcreatedate desc";
-		int max=20;
+		int pageSize=20;
 		List<SongList> list=new ArrayList<SongList>();
 		
 			Query query=getSession().createQuery(HQL);
 			query.setProperties(songListManage);
-			query.setFetchSize((page-1)*max);
-			query.setMaxResults(max);
+			query.setFirstResult((page-1)*pageSize);
+			query.setMaxResults(pageSize);
 			 list=query.list();
 		
 		
 		
 		return list;
 	}
-	
+
 	
 	/**
 	 * ↑↑↑以上是手写的方法↑↑↑

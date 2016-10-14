@@ -580,7 +580,7 @@
 						<!-- favor ul列表 -->
 						<ul class="songlist__list">
 							<!-- 开始favor列表遍历 -->
-						<s:iterator value="#session.SLMSSFav" var="list" status="index" >	
+						<s:iterator value="#request.SLMSSFav" var="list" status="index" >	
 						
 							<li mid="102796884" ix="30">
 								<div class="js_song_li songlist__item"
@@ -593,7 +593,7 @@
 									<div class="songlist__songname">
 										<span class="songlist__songname_txt">
 										<a  href="http://y.qq.com/portal/song/002QyILG4ROqHS.html"
-											class="js_song" title="#list.songName">
+											class="js_song" title="<s:property value="#list.songName" />">
 											
 											<s:property value="#list.songName" />
 											
@@ -624,7 +624,7 @@
 									<div class="songlist__artist">
 										<a href="http://y.qq.com/portal/singer/000GDFdW1he8eS.html"
 											data-singermid="000GDFdW1he8eS" data-singerid="182742"
-											title="#list.artistName" class="singer_name">
+											title="<s:property value="#list.artistName"/>" class="singer_name">
 										
 											<s:property value="#list.artistName"/>
 										
@@ -640,7 +640,7 @@
 									<div class="songlist__album">
 										<a data-albummid="0017Wxwf08P1KF" data-albumid="1032937"
 											href="http://y.qq.com/portal/album/0017Wxwf08P1KF.html"
-											title="#list.recordName" class="album_name">
+											title="<s:property value="#list.recordName" />" class="album_name">
 										
 										<s:property value="#list.recordName" />
 										
@@ -649,7 +649,7 @@
 									<!-- 音轨长度 -->
 									<div class="songlist__time">
 									
-									<s:date name="时长" format=" mm:ss" var="#list.duration"  ></s:date>
+									<s:date name="#list.duration" format=" mm:ss"></s:date>
 									
 									</div>
 									<div class="songlist__other">
