@@ -665,14 +665,19 @@
 					</div>
 					<!-- 分页按钮 -->
 					<div class="mod_page_nav js_pager">
-						<strong class="current">1</strong><a href="javascript:;"
-							class="js_pageindex" data-index="2" hidefocus="">2</a><a
-							href="javascript:;" class="js_pageindex" data-index="3"
-							hidefocus="">3</a><a href="javascript:;" class="js_pageindex"
-							data-index="4" hidefocus="">4</a><a href="javascript:;"
-							class="next js_pageindex" data-index="2" title="下一页" hidefocus=""><span>&gt;</span>
+						<strong class="current">1</strong>
+						<a href="javascript:;" class="js_pageindex" data-index="2" hidefocus="">2</a>
+						<a href="javascript:;" class="js_pageindex" data-index="3"hidefocus="">3</a>
+						<a href="javascript:;" class="current"data-index="4" hidefocus="">4</a>
+						<a href="javascript:;" class="next js_pageindex" data-index="2" title="下一页" hidefocus="">
+						<span>&gt;</span>
 						</a>
 					</div>
+					<!-- 控制分页按钮 -->
+					<script type="text/javascript">
+					
+						
+					</script>
 				</div>
 				<!-- 以下三个盒子因为没有数据,和暂时还不想做,先空着 -->
 				<div class="js_sub" style="display:none;" id="like_playlist_box"></div>

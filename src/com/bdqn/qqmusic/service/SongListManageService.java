@@ -25,7 +25,7 @@ public class SongListManageService implements ISongListManageSevice {
 	private String recordName;
 	private Time duration;
 	
-	//展示favor歌单曲目列表
+	//分页展示favor歌单曲目列表
 	
 	@Override
 	public List<SongListManageService> showFavList(User user, int page) {
@@ -38,9 +38,9 @@ public class SongListManageService implements ISongListManageSevice {
 		SongListDAO songListDAO = new SongListDAO();
 		//new歌曲dao
 		SongDAO songDAO=new SongDAO();
-		//原始歌单
+		//歌单容器
 		List<SongList> raw = new ArrayList<SongList>();
-		//获取分页歌单
+		//获取原始分页歌单
 		raw = songListDAO.getSongListByGeDan(FavGeDan, page);
 		//new 结果集合
 		List<SongListManageService> result=new ArrayList<SongListManageService>();
@@ -76,7 +76,15 @@ public class SongListManageService implements ISongListManageSevice {
 		return result;
 	}
 	
-	
+	//获取歌单最大页数
+	public int getMaxPage(SongListManage gedan){
+		SongListDAO songListDAO=new SongListDAO();
+		List gedanIns=songListDAO.findByProperty("songListManage", gedan);
+		
+		int result=gedanIns.size();
+		
+		return result;
+	}
 	
 	
 	//封装
