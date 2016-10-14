@@ -58,6 +58,12 @@ public class ProfileAction extends ActionSupport{
 		songlist__list=SLMS.showFavList(user, page);
 		//request.put("key",value);
 		session.put("SLMSSFav", songlist__list);
+		
+		
+		/**************分页按钮****************/
+		
+		
+		
 		return SUCCESS;
 	}
 	
