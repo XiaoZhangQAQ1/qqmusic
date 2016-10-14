@@ -312,6 +312,15 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 	    </div>
 	    <i class="popup_data_detail__arrow"></i>
 	</div>
+	<div class="mod_page_nav js_pager">
+	<a href="toplist.servlet?pid=${session.pageNum-1 }" class="next js_pageindex" data-index="1" title="下一页" hidefocus="">
+	<span>&lt;</span></a>
+	<strong class="current">${session.pageNum }</strong>
+	<a href="toplist.servlet?pid=${session.pageNum+1 }" class="js_pageindex" data-index="2" hidefocus="">${session.pageNum+1 }</a>
+	<a href="toplist.servlet?pid=${session.pageNum+2 }" class="js_pageindex" data-index="3" hidefocus="">${session.pageNum+2 }</a>
+	<a href="toplist.servlet?pid=${session.pageNum+3 }" class="js_pageindex" data-index="4" hidefocus="">${session.pageNum+3 }</a>
+	<a href="toplist.servlet?pid=${session.pageNum+1 }" class="next js_pageindex" data-index="2" title="下一页" hidefocus="">
+	<span>&gt;</span></a></div>
     </div>
     
 
@@ -406,6 +415,6 @@ require.async("js/v4/toplist.js"/*tpa=http://y.qq.com/portal/toplist/js/v4/topli
 	toplist.init({"toplist_type":"0","type":"top","id":"4","sub":0,"title":"斯柯达汽车·巅峰榜·流行指数","desc":"斯柯达汽车·巅峰榜·流行指数根据歌曲播放次数在7天内的涨幅自动生成，集结了当下正在蹿红的单曲。<br><br>更新时间：每天上午10点<br>统计对象：QQ音乐库内全部歌曲<br>排名数量：100首<br>统计算法：比较歌曲在7天内有效播放次数的涨幅，由高到低取前100名<br>有效播放次数：登录用户完整播放一首歌曲，记为一次有效播放；同一用户收听同一首歌曲，每天记录为1次有效播放。","albumDesc":"","dateList":["2016-09-26",""],"albumDateList":["2016-09-26",""]});
 });
 </script> 
-
+<div class="mod_page_nav js_pager"><strong class="current">1</strong><a href="javascript:;" class="js_pageindex" data-index="2" hidefocus="">2</a><a href="javascript:;" class="js_pageindex" data-index="3" hidefocus="">3</a><a href="javascript:;" class="js_pageindex" data-index="4" hidefocus="">4</a><a href="javascript:;" class="next js_pageindex" data-index="2" title="下一页" hidefocus=""><span>&gt;</span></a></div>
 </body>
 </html>
