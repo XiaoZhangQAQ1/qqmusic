@@ -33,10 +33,26 @@ public class AlbumServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		System.out.println("doGet() here...");
+		
+		//分页
+		String page = "1";
+		int pageNum;
+		if(request.getParameter("pid")!=null){
+			page = request.getParameter("pid");
+			pageNum=Integer.parseInt(page);
+		}else{
+			pageNum = 1;
+		}
+		
+		
+		
+		
+		
+		
 		PrintWriter out = response.getWriter();		
 		RecordService recordService=new RecordService();
 		List<Record> mod_playlist=new ArrayList<Record>();
-		mod_playlist=recordService.getAllRecord();
+		mod_playlist=recordService.getAllRecordsByPageNum(pageNum, 20);
 		System.out.println("hah");
 		
 		for (Record record : mod_playlist) {
@@ -48,6 +64,7 @@ public class AlbumServlet extends HttpServlet {
 		String path="images/Album/";
 		request.getSession().setAttribute("path", path);
 		request.getSession().setAttribute("all", mod_playlist);
+		request.getSession().setAttribute("pageNum", pageNum);
 
 
 		//弄了struts不用在servlet跳转,

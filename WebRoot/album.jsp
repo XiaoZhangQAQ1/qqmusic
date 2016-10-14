@@ -407,7 +407,7 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 					 alt="images" 
 					 class="playlist__pic" 
 					 style="display: block; 
-					 visibility: visible;">${path } ${record.getRcoverpath()}
+					 visibility: visible;">
 				<i class="mod_cover__icon_play js_play" data-stat="y_new.album_lib.album_play"></i>
 			</a>
 			
@@ -445,13 +445,14 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 
 		<!-- 底部数字分页 -->
         <div class="mod_page_nav js_pager"> 
-        	<strong class="current">1</strong>
-        		<a href="javascript:;" class="js_pageindex" data-index="2" hidefocus="">2</a>
-        		<a href="javascript:;" class="js_pageindex" data-index="3" hidefocus="">3</a>
-        		<a href="javascript:;" class="js_pageindex" data-index="4" hidefocus="">4</a>
+        <a href="album.servlet?pid=${session.pageNum-1 }" class="next js_pageindex" data-index="1" title="下一页" hidefocus=""><span>&lt;</span></a>
+        	<strong class="current">${session.pageNum }</strong>
+        		<a href="album.servlet?pid=${session.pageNum+1 }" class="js_pageindex" data-index="2" hidefocus="">${session.pageNum+1 }</a>
+        		<a href="album.servlet?pid=${session.pageNum+2 }" class="js_pageindex" data-index="3" hidefocus="">${session.pageNum+2 }</a>
+        		<a href="album.servlet?pid=${session.pageNum+3 }" class="js_pageindex" data-index="4" hidefocus="">${session.pageNum+3 }</a>
         		<strong class="more">...</strong>
         		<a href="javascript:;" class="js_pageindex" data-index="41881" hidefocus="">41881</a>
-        		<a href="javascript:;" class="next js_pageindex" data-index="2" title="下一页" hidefocus=""><span>&gt;</span></a>
+        		<a href="album.servlet?pid=${session.pageNum+1 }" class="next js_pageindex" data-index="2" title="下一页" hidefocus=""><span>&gt;</span></a>
         </div>
        
        </div>
