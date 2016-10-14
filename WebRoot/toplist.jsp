@@ -222,7 +222,14 @@ if(window.ActiveXObject || window.msIsStaticHTML){
 		    <div class="songlist__songname">
 			<span class="songlist__songname_txt" style="visibility: visible;">
 			    <a href="http://y.qq.com/portal/album/003zeWC84IaQCM.html" class="songlist__cover album_name" data-albummid="003zeWC84IaQCM" data-albumid="1634630">
-			    <img onerror="this.src=&#39;//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000&#39;;this.onerror=null;" src="./斯柯达汽车·巅峰榜·流行指数 - QQ音乐 - 听我想听的歌!_files/T002R90x90M000003zeWC84IaQCM.jpg" data-original="//y.gtimg.cn/music/photo_new/T002R90x90M000003zeWC84IaQCM.jpg?max_age=2592000" alt="中国新歌声第一季 总决赛" class="songlist__pic" style="display: inline; visibility: visible;"></a>
+			    
+			    <!--  onerror，当图片不存在时，将触发 onerror -->
+			    <!-- 原版图片链接：src="./斯柯达汽车·巅峰榜·流行指数 - QQ音乐 - 听我想听的歌!_files/T002R90x90M000003zeWC84IaQCM.jpg" -->
+			    <img onerror="this.src=&#39;//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000&#39;;this.onerror=null;" 
+			    src="./images/record/${song.getRecord().getRcoverpath() }" 
+			    data-original="//y.gtimg.cn/music/photo_new/T002R90x90M000003zeWC84IaQCM.jpg?max_age=2592000" 
+			    alt="中国新歌声第一季 总决赛" class="songlist__pic" 
+			    style="display: inline; visibility: visible;"></a>
 			    <a href="http://y.qq.com/portal/song/001nDjqk2uL2eE.html" class="js_song" title="丑八怪 + 给我一个吻 (Live) (加油曲)">${song.getSname() }</a>
 			</span>
 			    
