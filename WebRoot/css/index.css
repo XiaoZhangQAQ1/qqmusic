@@ -105,12 +105,12 @@
 	width: 20px;
 	height: 20px;
 	background-image:
-		url("img/icon_sprite.png-max_age=2592000&v=8f22e35071a604d092083fa1739a8a18.png")
+		url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png?max_age=2592000&v=8f22e35071a604d092083fa1739a8a18*/;
-	background-image: -webkit-image-set(url("img/icon_sprite.png")
+	background-image: -webkit-image-set(url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/   1x,
-		url("img/icon_sprite@2x.png")
+		url("../images/icon_sprite@2x.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/   2x);
 	background-position: -80px -40px
@@ -226,12 +226,12 @@
 	left: 15px;
 	top: 10px;
 	background-image:
-		url("img/icon_sprite.png-max_age=2592000&v=8f22e35071a604d092083fa1739a8a18.png")
+		url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png?max_age=2592000&v=8f22e35071a604d092083fa1739a8a18*/;
-	background-image: -webkit-image-set(url("img/icon_sprite.png")
+	background-image: -webkit-image-set(url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/   1x,
-		url("img/icon_sprite@2x.png")
+		url("../images/icon_sprite@2x.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/   2x);
 	background-repeat: no-repeat
@@ -563,12 +563,12 @@ supports  (-webkit-appearance:none ){ .
 	width: 19px;
 	height: 12px;
 	background-image:
-		url("img/icon_sprite.png-max_age=2592000&v=8f22e35071a604d092083fa1739a8a18.png")
+		url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png?max_age=2592000&v=8f22e35071a604d092083fa1739a8a18*/;
-	background-image: -webkit-image-set(url("img/icon_sprite.png")
+	background-image: -webkit-image-set(url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/   1x,
-		url("img/icon_sprite@2x.png")
+		url("../images/icon_sprite@2x.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/   2x);
 	background-position: -180px -20px;
@@ -656,7 +656,7 @@ opacity
 
 .mod_cover:hover .mod_cover__icon_play {
 	background: 0 0\9;
-	filter: progid:dximagetransform.microsoft.alphaimageloader(src="http://imgcache.gtimg.cn/mediastyle/yqq/img/cover_play.png",
+	filter: progid:dximagetransform.microsoft.alphaimageloader(src="http://localhost:8080/qqmusic/images/cover_play.png",
 		sizingmethod="crop" ) alpha(opacity = 90);
 	opacity: .9;
 	-webkit-transform: scale(1);
@@ -670,12 +670,12 @@ opacity
 
 .mod_cover .mod_cover__icon_play:hover,.mod_cover__icon_play {
 	background-image:
-		url("images/cover_play.png-max_age=2592000&v=fa72193fd8d5000e90837380d6be93ea.png")
+		url("../images/cover_play.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/cover_play.png?max_age=2592000&v=fa72193fd8d5000e90837380d6be93ea*/;
-	background-image: -webkit-image-set(url("images/cover_play.png")
+	background-image: -webkit-image-set(url("../images/cover_play.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/cover_play.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/cover_play.png*/   1x,
-		url("images/cover_play@2x.png")
+		url("../images/cover_play@2x.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/cover_play@2x.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/cover_play@2x.png*/   2x)
 }
@@ -784,12 +784,12 @@ opacity
 	top: 50%;
 	margin-top: -9px;
 	background-image:
-		url("images/icon_sprite.png-max_age=2592000&v=8f22e35071a604d092083fa1739a8a18.png")
+		url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png?max_age=2592000&v=8f22e35071a604d092083fa1739a8a18*/;
-	background-image: -webkit-image-set(url("images/icon_sprite.png")
+	background-image: -webkit-image-set(url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/   1x,
-		url("images/icon_sprite@2x.png")
+		url("../images/icon_sprite@2x.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/   2x);
 	width: 11px;
@@ -1002,12 +1002,12 @@ supports  (-webkit-appearance:none ){ .
 	width: 7px;
 	height: 12px;
 	background-image:
-		url("images/icon_sprite.png-max_age=2592000&v=8f22e35071a604d092083fa1739a8a18.png")
+		url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png?max_age=2592000&v=8f22e35071a604d092083fa1739a8a18*/;
-	background-image: -webkit-image-set(url("images/icon_sprite.png")
+	background-image: -webkit-image-set(url("../images/icon_sprite.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png*/   1x,
-		url("images/icon_sprite@2x.png")
+		url("../images/icon_sprite@2x.png")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png*/   2x);
 	background-position: -120px -40px;
@@ -1073,7 +1073,7 @@ supports  (-webkit-appearance:none ){ .
 .mod_index--new {
 	height: 734px;
 	background: #000
-		url("images/bg_index.jpg")
+		url("../images/bg_index.jpg")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/bg_index_new.jpg?max_age=2592000&v=e1e9b8c2303de5fcddd034ae599dcfd3*/
 		  50% 0 repeat-x
 }
@@ -1126,7 +1126,7 @@ supports  (-webkit-appearance:none ){ .
 
 .mod_index--top {
 	background: #121212
-		url("images/bg_index_top2.jpg")
+		url("../images/bg_index_top2.jpg")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/bg_index_top2.jpg?max_age=2592000&v=531e103c145f5e41727f787b628a1b3b*/
 		  50% 0 no-repeat
 }
@@ -1177,7 +1177,7 @@ supports  (-webkit-appearance:none ){ .
 	width: 100%;
 	height: 567px;
 	background-image:
-		url("images/bg_index_top.jpg")
+		url("../images/bg_index_top.jpg")
 		/*tpa=http://y.gtimg.cn/mediastyle/yqq/img/bg_index_top.jpg?max_age=2592000&v=63ba64e9ecec96ba2b541e4941b79d60*/
 }
 
