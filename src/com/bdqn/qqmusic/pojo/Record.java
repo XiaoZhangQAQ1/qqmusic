@@ -10,7 +10,7 @@ import java.util.Set;
  */
 
 public class Record implements java.io.Serializable {
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	
 	// Fields
 
 	private Integer rid;
@@ -109,11 +109,11 @@ public class Record implements java.io.Serializable {
 		this.rmainartist = rmainartist;
 	}
 
-	// 重新映射前先存档,去掉日期时分秒
-	public Date getRdate() {
-		return rdate;
-	}
 
+	public Date getRdate(){
+		return this.rdate;
+	}
+	
 	public void setRdate(Date rdate) {
 		this.rdate = rdate;
 	}

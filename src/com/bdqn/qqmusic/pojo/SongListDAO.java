@@ -1,7 +1,7 @@
 package com.bdqn.qqmusic.pojo;
 
 import com.bdqn.qqmusic.dao.BaseDAO;
-import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.LockMode;
 import org.hibernate.Query;
@@ -25,6 +25,35 @@ public class SongListDAO extends BaseDAO {
 	private static final Logger log = LoggerFactory
 			.getLogger(SongListDAO.class);
 
+	/**
+	 * ↓↓↓以下是手写的方法↓↓
+	 * 
+	 */
+	
+	//获取歌单歌曲列表,一页20首,页码page
+	public List<SongList> getSongListByGeDan(SongListManage songListManage,int page) {
+		String HQL="from SongList songList " +
+				"where songList.songListManage.smid=:smid " +
+				"order by slcreatedate desc";
+		int pageSize=20;
+		List<SongList> list=new ArrayList<SongList>();
+		
+			Query query=getSession().createQuery(HQL);
+			query.setProperties(songListManage);
+			query.setFirstResult((page-1)*pageSize);
+			query.setMaxResults(pageSize);
+			 list=query.list();
+		
+		
+		
+		return list;
+	}
+
+	
+	/**
+	 * ↑↑↑以上是手写的方法↑↑↑
+	 * 
+	 */
 	// property constants
 
 	public void save(SongList transientInstance) {

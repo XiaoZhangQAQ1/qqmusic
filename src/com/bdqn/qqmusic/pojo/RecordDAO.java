@@ -9,6 +9,7 @@ import java.util.Set;
 import org.hibernate.LockMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -160,6 +161,9 @@ public class RecordDAO extends BaseDAO {
 		}
 	}
 
+	
+	
+	
 	public Record merge(Record detachedInstance) {
 		log.debug("merging Record instance");
 		try {
@@ -195,6 +199,18 @@ public class RecordDAO extends BaseDAO {
 	}
 
 	// 以下是自己编写的DAO运行方法
+	public List<Record> getRecordsByPageNum( int pageNum,
+			int line) {
+		Session session = HibernateSessionFactory.getSession();
+		Query q = session
+				.createQuery("from Record");
+		
+		q.setFirstResult((pageNum - 1) * line);
+		q.setMaxResults(line);
+
+		List<Record> list = q.list();
+		return list;
+	}
 
 	public List<Record> getRecordsByGenre(Genre genre) {
 		Session session = HibernateSessionFactory.getSession();
@@ -222,7 +238,7 @@ public class RecordDAO extends BaseDAO {
 	public List<Record> getRecordsByCompany(Company company) {
 		Session session = HibernateSessionFactory.getSession();
 		Query q = session
-				.createQuery("from Record record where record.record.cid=:cid");
+				.createQuery("from Record record where record.company.cid=:cid");
 		q.setProperties(company);
 		List<Record> list = q.list();
 		return list;
@@ -232,7 +248,7 @@ public class RecordDAO extends BaseDAO {
 			int pageNum, int line) {
 		Session session = HibernateSessionFactory.getSession();
 		Query q = session
-				.createQuery("from Record record where record.record.cid=:cid");
+				.createQuery("from Record record where record.company.cid=:cid");
 		q.setProperties(company);
 		q.setFirstResult((pageNum - 1) * line);
 		q.setMaxResults(line);
@@ -275,7 +291,7 @@ public class RecordDAO extends BaseDAO {
 	public List<Record> getRecordByTypePageNum(Type type, int pageNum, int line) {
 		Session session = HibernateSessionFactory.getSession();
 		Query q = session
-				.createQuery("from Record record where record.language.tid=:tid");
+				.createQuery("from Record record where record.type.tid=:tid");
 		q.setProperties(type);
 		q.setFirstResult((pageNum - 1) * line);
 		q.setMaxResults(line);
@@ -283,4 +299,7 @@ public class RecordDAO extends BaseDAO {
 		List<Record> list = q.list();
 		return list;
 	}
+	
+	
+	
 }

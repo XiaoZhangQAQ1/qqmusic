@@ -30,22 +30,49 @@ public class AlbumServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		System.out.println("doGet() here...");
+		
+		//分页
+		String page = "1";
+		int pageNum;
+		if(request.getParameter("pid")!=null){
+			page = request.getParameter("pid");
+			pageNum=Integer.parseInt(page);
+		}else{
+			pageNum = 1;
+		}
+		
+		
+		
+		
+		
 		
 		PrintWriter out = response.getWriter();		
 		RecordService recordService=new RecordService();
 		List<Record> mod_playlist=new ArrayList<Record>();
-		mod_playlist=recordService.getAllRecord();
+		mod_playlist=recordService.getAllRecordsByPageNum(pageNum, 20);
 		System.out.println("hah");
+		
 		for (Record record : mod_playlist) {
-			System.out.println(record.getRname()+" "+record.getRdate());
+			//
+			//record.setRcoverpath(rcoverpath);
+			System.out.println(record.getRname()+" "+record.getRcoverpath());
 		}
+		
+		String path="images/Album/";
+		request.getSession().setAttribute("path", path);
 		request.getSession().setAttribute("all", mod_playlist);
+		request.getSession().setAttribute("pageNum", pageNum);
+
 
 		//弄了struts不用在servlet跳转,
-		//response.sendRedirect("../qqmusic/album.jsp");
-		//out.flush();
-		//out.close();
+		
+		response.sendRedirect("../qqmusic/album.jsp");
+		out.flush();
+		out.close();
+
 
 	}
 

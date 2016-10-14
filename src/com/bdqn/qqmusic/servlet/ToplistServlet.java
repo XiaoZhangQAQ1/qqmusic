@@ -45,11 +45,19 @@ public class ToplistServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		PrintWriter out = response.getWriter();
-		
+		//当前页码
+		String page;
+		if(request.getParameter("pid")!=null){
+			page = request.getParameter("pid");
+		}else{
+			page = "1";
+		}
+		int pageNum=Integer.parseInt(page);
 		SongService songService = new SongService();
 		List<Song> songlist = new ArrayList<Song>();
 		System.out.println("before getAllSongs().............");
-		songlist = songService.getAllSongs();
+		//songlist = songService.getAllSongs();
+		songlist = songService.getAllSongsByPageNum(pageNum, 10);
 		
 		//System.out.println("123");
 		/**
@@ -58,10 +66,13 @@ public class ToplistServlet extends HttpServlet {
 		 * 现在先把所有的歌遍历出来
 		 */
 		for(Song song : songlist){
-			System.out.println(song.getSname()+"   "+song.getArtist());
+			System.out.println(song.getSname()+"   "+song.getRecord().getRcoverpath());
 		}
 		request.getSession().setAttribute("all", songlist);
+		request.getSession().setAttribute("pageNum", pageNum);
+		
 		response.sendRedirect("../qqmusic/toplist.jsp");
+		System.out.println(songlist.getClass());
 		out.flush();
 		out.close();
 	}
