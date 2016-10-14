@@ -40,18 +40,13 @@ public class SongListDAO extends BaseDAO {
 				"order by slcreatedate desc";
 		int max=20;
 		List<SongList> list=new ArrayList<SongList>();
-		try {
+		
 			Query query=getSession().createQuery(HQL);
 			query.setProperties(songListManage);
 			query.setFetchSize((page-1)*max);
 			query.setMaxResults(max);
 			 list=query.list();
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}finally{
-			getSession().close();
-		}
+		
 		
 		
 		return list;

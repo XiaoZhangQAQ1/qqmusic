@@ -45,19 +45,14 @@ public class SongListManageDAO extends BaseDAO {
 				   "where  songListManage.user.uid=:uid " +
 				   "order by smcreatedate";
 		SongListManage fav=new SongListManage();
-		try {
+		
 			Query query=getSession().createQuery(hql);
 			query.setProperties(user);
 			query.setFetchSize(0);
 			query.setMaxResults(1);
 			List<SongListManage> list=query.list();
 			fav=list.get(0);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}finally{
-			getSession().close();
-		}
+		
 		
 
 		return fav;
