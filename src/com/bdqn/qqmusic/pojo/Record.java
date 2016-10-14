@@ -110,9 +110,8 @@ public class Record implements java.io.Serializable {
 	}
 
 	// 重新映射前先存档,去掉日期时分秒
-	public String getRdate() {
-		String date = sdf.format(this.rdate);
-		return date;
+	public Date getRdate() {
+		return rdate;
 	}
 
 	public void setRdate(Date rdate) {
