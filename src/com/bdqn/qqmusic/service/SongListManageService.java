@@ -2,20 +2,17 @@ package com.bdqn.qqmusic.service;
 
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.bdqn.qqmusic.factory.HibernateSessionFactory;
-import com.bdqn.qqmusic.pojo.SongDAO;
 import com.bdqn.qqmusic.pojo.SongList;
 import com.bdqn.qqmusic.pojo.SongListDAO;
 import com.bdqn.qqmusic.pojo.SongListManage;
 import com.bdqn.qqmusic.pojo.SongListManageDAO;
 import com.bdqn.qqmusic.pojo.User;
-import com.sun.xml.internal.txw2.TXW;
 
 public class SongListManageService implements ISongListManageSevice {
 	
@@ -24,7 +21,7 @@ public class SongListManageService implements ISongListManageSevice {
 	private String artistName;
 	private String recordName;
 	private Time duration;
-	
+
 	//分页展示favor歌单曲目列表
 	
 	@Override
@@ -36,8 +33,6 @@ public class SongListManageService implements ISongListManageSevice {
 		SongListManage FavGeDan = getfavList.getFavList(user);
 		//new歌单dao
 		SongListDAO songListDAO = new SongListDAO();
-		//new歌曲dao
-		SongDAO songDAO=new SongDAO();
 		//歌单容器
 		List<SongList> raw = new ArrayList<SongList>();
 		//获取原始分页歌单
@@ -48,6 +43,7 @@ public class SongListManageService implements ISongListManageSevice {
 		Session session=null;
 		Transaction tx=null;
 		try {
+			
 			session=HibernateSessionFactory.getSession();
 			tx=session.beginTransaction();
 			for (int i=0;i<raw.size();i++) {
@@ -69,6 +65,7 @@ public class SongListManageService implements ISongListManageSevice {
 			e.printStackTrace();
 			tx.rollback();
 		}finally{
+			
 			session.close();
 		}
 		
@@ -77,7 +74,7 @@ public class SongListManageService implements ISongListManageSevice {
 	}
 	
 	//获取歌单最大页数
-	public int getMaxPage(SongListManage gedan){
+	public int getMaxPageByGeDan(SongListManage gedan){
 		SongListDAO songListDAO=new SongListDAO();
 		List gedanIns=songListDAO.findByProperty("songListManage", gedan);
 		
@@ -128,7 +125,6 @@ public class SongListManageService implements ISongListManageSevice {
 	}
 
 
-	
 	
 	//构造器
 		//无参

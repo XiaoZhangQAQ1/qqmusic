@@ -666,10 +666,10 @@
 					<!-- 分页按钮 -->
 					<div class="mod_page_nav js_pager">
 						<strong class="current">1</strong>
-						<a href="javascript:;" class="js_pageindex" data-index="2" hidefocus="">2</a>
-						<a href="javascript:;" class="js_pageindex" data-index="3"hidefocus="">3</a>
-						<a href="javascript:;" class="current"data-index="4" hidefocus="">4</a>
-						<a href="javascript:;" class="next js_pageindex" data-index="2" title="下一页" hidefocus="">
+						<a href="javascript:;" class="js_pageindex"  >2</a>
+						<a href="javascript:;" class="js_pageindex" >3</a>
+						<a href="javascript:;" class="current" >4</a>
+						<a href="javascript:;" class="next js_pageindex"  title="下一页" >
 						<span>&gt;</span>
 						</a>
 					</div>

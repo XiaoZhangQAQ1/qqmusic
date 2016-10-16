@@ -18,9 +18,9 @@
 	<!-- 配置文件自动更新 -->
 	<constant name="struts.configuration.xml.reload" value="true"></constant>
 	<!-- ********************************华丽的分割线************************************ -->
-	<!-- *注意namespace="/",这里的设置全局action过滤器,struts本质是过滤器;
-		 *		
-			和servlet的路径撞车* -->
+	<!-- *注意namespace="/",这里的设置全局action过滤器,struts本质是过滤器;				   * -->
+	<!-- *和servlet的路径撞车                                                                                                                      * -->		
+	<!-- ********************************华丽的分割线************************************ -->		
 	<package name="default" namespace="/" extends="struts-default">
 	    
 	    <!-- "我的音乐"profile页action -->
@@ -29,6 +29,9 @@
 			<!-- 检测登录状态待完成 -->
 			<result name="error">profile.jsp</result>	
 		</action>
+		
+		
+		
 		
 		<!-- "音乐库"album页action ps:没细改,只是直接连到原来的servlet-->
 		<action name="album" class="com.bdqn.qqmusic.action.AlbumAction" >
@@ -41,8 +44,9 @@
 		</action>
 				
 	</package>
-	
-		<package name="json" namespace="/" extends="json-default">
+	<!-- json -->
+	<package name="json" namespace="/" extends="json-default">
+		<!-- 唔关事 -->
 		<action name="testJson" class="com.bdqn.qqmusic.action.SingerListAction">			
 			<result name="singerlist" type="json" >
 				<param name="includeProperties">
@@ -50,6 +54,15 @@
 				</param>
 			</result>
 		</action>
+		<!-- ↓↓就系E个action -->
+ 		<action name="pager"  class="com.bdqn.qqmusic.action.PagerAction">
+			<result name="pageNum" type="json" >
+				<param name="includeProperties">
+					maxPage,currentPage
+				</param>
+			</result>		
+		</action> 
+			
 	</package>
 	
 </struts>    
