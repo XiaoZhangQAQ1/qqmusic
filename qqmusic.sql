@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2016-10-10 19:21:17
+Date: 2016-10-16 22:55:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `artist` (
   PRIMARY KEY (`aid`),
   KEY `fkANID` (`anid`),
   CONSTRAINT `fkANID` FOREIGN KEY (`anid`) REFERENCES `nation` (`nid`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of artist
@@ -57,6 +57,72 @@ INSERT INTO `artist` VALUES ('12', '周杰伦', '私立淡江中学音乐科', '
 INSERT INTO `artist` VALUES ('13', '	作家、作曲家', '	中京大学', '日本', '东京', '歌手，作家、作曲家', '173cm', '68kg', 'B型', '日本著名作曲家', '作曲', null, '1', null);
 INSERT INTO `artist` VALUES ('14', '权志龙 ', '庆熙大学后现代音乐系', '韩国', '首尔', '歌手，作家', '178cm', '60kg', 'A型', '08年韩国十大作曲家', '作曲、作词\r\n作曲、作词\r\n作曲、作词', null, '5', null);
 INSERT INTO `artist` VALUES ('15', '贾斯汀·比伯 ', null, '加拿大', '斯特拉特福', '歌手，演员', '172cm', '55kg', 'B型', '第40届AMA全美音乐奖最佳艺人奖', '养狗', null, '3', null);
+INSERT INTO `artist` VALUES ('16', '张学友', null, null, null, null, null, null, null, null, null, '张学友', '1', null);
+INSERT INTO `artist` VALUES ('17', 'beyond', null, null, null, null, null, null, null, null, null, 'beyond', '1', null);
+INSERT INTO `artist` VALUES ('18', '许冠杰', null, null, null, null, null, null, null, null, null, '许冠杰', '1', null);
+INSERT INTO `artist` VALUES ('19', '陈百强', null, null, null, null, null, null, null, null, null, '陈百强', '1', null);
+INSERT INTO `artist` VALUES ('20', '草蜢乐队', null, null, null, null, null, null, null, null, null, '草蜢乐队', '1', null);
+INSERT INTO `artist` VALUES ('21', '郭富城', null, null, null, null, null, null, null, null, null, '郭富城', '1', null);
+INSERT INTO `artist` VALUES ('22', '黎明', null, null, null, null, null, null, null, null, null, '黎明', '1', null);
+INSERT INTO `artist` VALUES ('23', '林子祥', null, null, null, null, null, null, null, null, null, '林子祥', '1', null);
+INSERT INTO `artist` VALUES ('24', '李荣浩', null, null, null, null, null, null, null, null, null, '李荣浩', '1', null);
+INSERT INTO `artist` VALUES ('25', '林俊杰', null, null, null, null, null, null, null, null, null, '林俊杰', '1', null);
+INSERT INTO `artist` VALUES ('26', '张杰', null, null, null, null, null, null, null, null, null, '张杰', '1', null);
+INSERT INTO `artist` VALUES ('27', '杨宗纬', null, null, null, null, null, null, null, null, null, '杨宗纬', '1', null);
+INSERT INTO `artist` VALUES ('28', '蒋敦豪', null, null, null, null, null, null, null, null, null, '蒋敦豪', '1', null);
+INSERT INTO `artist` VALUES ('29', '许嵩', null, null, null, null, null, null, null, null, null, '许嵩', '1', null);
+INSERT INTO `artist` VALUES ('30', '汪峰', null, null, null, null, null, null, null, null, null, '汪峰', '1', null);
+INSERT INTO `artist` VALUES ('31', '邓紫棋', null, null, null, null, null, null, null, null, null, '邓紫棋', '1', null);
+INSERT INTO `artist` VALUES ('32', '庄心妍', null, null, null, null, null, null, null, null, null, '庄心妍', '1', null);
+INSERT INTO `artist` VALUES ('33', '那英', null, null, null, null, null, null, null, null, null, '那英', '1', null);
+INSERT INTO `artist` VALUES ('34', '汪晨蕊', null, null, null, null, null, null, null, null, null, '汪晨蕊', '1', null);
+INSERT INTO `artist` VALUES ('35', '张碧晨', null, null, null, null, null, null, null, null, null, '张碧晨', '1', null);
+INSERT INTO `artist` VALUES ('36', '王菲', null, null, null, null, null, null, null, null, null, '王菲', '1', null);
+INSERT INTO `artist` VALUES ('37', '张靓颖', null, null, null, null, null, null, null, null, null, '张靓颖', '1', null);
+INSERT INTO `artist` VALUES ('38', '筷子兄弟', null, null, null, null, null, null, null, null, null, '筷子兄弟', '1', null);
+INSERT INTO `artist` VALUES ('39', 'TFBOYS', null, null, null, null, null, null, null, null, null, 'TFBOYS', '1', null);
+INSERT INTO `artist` VALUES ('40', '凤凰传奇', null, null, null, null, null, null, null, null, null, '凤凰传奇', '1', null);
+INSERT INTO `artist` VALUES ('41', '태양 (太阳)', null, null, null, null, null, null, null, null, null, '태양 (太阳)', '4', null);
+INSERT INTO `artist` VALUES ('42', 'PSY (朴载相)', null, null, null, null, null, null, null, null, null, 'PSY (朴载相)', '4', null);
+INSERT INTO `artist` VALUES ('43', '윤미래 (尹美莱)', null, null, null, null, null, null, null, null, null, '윤미래 (尹美莱)', '4', null);
+INSERT INTO `artist` VALUES ('44', 'SARA (姜世花)', null, null, null, null, null, null, null, null, null, 'SARA (姜世花)', '4', null);
+INSERT INTO `artist` VALUES ('45', '백지영 (白智英)', null, null, null, null, null, null, null, null, null, '백지영 (白智英)', '4', null);
+INSERT INTO `artist` VALUES ('46', 'Piko-Taro (ピコ太郎)', null, null, null, null, null, null, null, null, null, 'Piko-Taro (ピコ太郎)', '3', null);
+INSERT INTO `artist` VALUES ('47', '澤野弘之 (さわの ひろ', null, null, null, null, null, null, null, null, null, '澤野弘之 (さわの ひろ', '3', null);
+INSERT INTO `artist` VALUES ('48', '久石譲 (Joe Hisaishi)', null, null, null, null, null, null, null, null, null, '久石譲 (Joe Hisaishi)', '3', null);
+INSERT INTO `artist` VALUES ('49', '和田光司', null, null, null, null, null, null, null, null, null, '和田光司', '3', null);
+INSERT INTO `artist` VALUES ('50', '高梨康治', null, null, null, null, null, null, null, null, null, '高梨康治', '3', null);
+INSERT INTO `artist` VALUES ('51', '宗次郎', null, null, null, null, null, null, null, null, null, '宗次郎', '3', null);
+INSERT INTO `artist` VALUES ('52', '花澤香菜', null, null, null, null, null, null, null, null, null, '花澤香菜', '3', null);
+INSERT INTO `artist` VALUES ('53', '茅野愛衣', null, null, null, null, null, null, null, null, null, '茅野愛衣', '3', null);
+INSERT INTO `artist` VALUES ('54', '倉木麻衣', null, null, null, null, null, null, null, null, null, '倉木麻衣', '3', null);
+INSERT INTO `artist` VALUES ('55', '小林未郁', null, null, null, null, null, null, null, null, null, '小林未郁', '3', null);
+INSERT INTO `artist` VALUES ('56', '戸松遥 (とまつ はるか)', null, null, null, null, null, null, null, null, null, '戸松遥 ', '3', null);
+INSERT INTO `artist` VALUES ('57', '釘宮理恵 (Kugimiya Rie)', null, null, null, null, null, null, null, null, null, '釘宮理恵 ', '3', null);
+INSERT INTO `artist` VALUES ('58', '堀江由衣 (ほりえ ゆい)', null, null, null, null, null, null, null, null, null, '堀江由衣 ', '3', null);
+INSERT INTO `artist` VALUES ('59', '能登麻美子', null, null, null, null, null, null, null, null, null, '能登麻美子', '3', null);
+INSERT INTO `artist` VALUES ('60', '阿澄佳奈', null, null, null, null, null, null, null, null, null, '阿澄佳奈', '3', null);
+INSERT INTO `artist` VALUES ('61', 'Eminem (艾米纳姆)', null, null, null, null, null, null, null, null, null, 'Eminem (艾米纳姆)', '4', null);
+INSERT INTO `artist` VALUES ('62', 'Michael Jackson', null, null, null, null, null, null, null, null, null, 'Michael Jackson', '4', null);
+INSERT INTO `artist` VALUES ('63', 'Charlie Puth', null, null, null, null, null, null, null, null, null, 'Charlie Puth', '4', null);
+INSERT INTO `artist` VALUES ('64', 'Pitbull', null, null, null, null, null, null, null, null, null, 'Pitbull', '4', null);
+INSERT INTO `artist` VALUES ('65', 'Usher', null, null, null, null, null, null, null, null, null, 'Usher', '4', null);
+INSERT INTO `artist` VALUES ('66', 'Zedd', null, null, null, null, null, null, null, null, null, 'Zedd', '4', null);
+INSERT INTO `artist` VALUES ('67', 'Alesso', null, null, null, null, null, null, null, null, null, 'Alesso', '4', null);
+INSERT INTO `artist` VALUES ('68', 'Babyface', null, null, null, null, null, null, null, null, null, 'Babyface', '4', null);
+INSERT INTO `artist` VALUES ('69', 'Kygo', null, null, null, null, null, null, null, null, null, 'Kygo', '4', null);
+INSERT INTO `artist` VALUES ('70', 'Joel Adams', null, null, null, null, null, null, null, null, null, 'Joel Adams', '4', null);
+INSERT INTO `artist` VALUES ('71', 'Adele', null, null, null, null, null, null, null, null, null, 'Adele', '4', null);
+INSERT INTO `artist` VALUES ('72', 'Avril Lavigne', null, null, null, null, null, null, null, null, null, 'Avril Lavigne', '4', null);
+INSERT INTO `artist` VALUES ('73', 'Kelly Clarkson', null, null, null, null, null, null, null, null, null, 'Kelly Clarkson', '4', null);
+INSERT INTO `artist` VALUES ('74', 'Taylor Swift', null, null, null, null, null, null, null, null, null, 'Taylor Swift', '4', null);
+INSERT INTO `artist` VALUES ('75', 'Katy Perry', null, null, null, null, null, null, null, null, null, 'Katy Perry', '4', null);
+INSERT INTO `artist` VALUES ('76', 'Britney Spears', null, null, null, null, null, null, null, null, null, 'Britney Spears', '4', null);
+INSERT INTO `artist` VALUES ('77', 'Sia', null, null, null, null, null, null, null, null, null, 'Sia', '4', null);
+INSERT INTO `artist` VALUES ('78', 'Ellie Goulding ', null, null, null, null, null, null, null, null, null, 'Ellie Goulding ', '4', null);
+INSERT INTO `artist` VALUES ('79', 'Shakira', null, null, null, null, null, null, null, null, null, 'Shakira', '4', null);
+INSERT INTO `artist` VALUES ('80', 'Billie Eilish', null, null, null, null, null, null, null, null, null, 'Billie Eilish', '4', null);
+INSERT INTO `artist` VALUES ('108', 'Coldplay', '英国金斯顿大学', '英国', '英国', '乐队', '171cm', null, null, '第X届水星奖', null, null, '3', null);
 
 -- ----------------------------
 -- Table structure for `company`
@@ -94,7 +160,7 @@ CREATE TABLE `genre` (
   `ggenre` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`gid`),
   UNIQUE KEY `asstyle` (`ggenre`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of genre
@@ -102,6 +168,7 @@ CREATE TABLE `genre` (
 INSERT INTO `genre` VALUES ('4', 'Electronic 电子');
 INSERT INTO `genre` VALUES ('3', 'K-Pop 韩国流行');
 INSERT INTO `genre` VALUES ('1', 'Pop 流行');
+INSERT INTO `genre` VALUES ('5', 'Rock 摇滚');
 INSERT INTO `genre` VALUES ('2', 'Soundtrack 原声');
 
 -- ----------------------------
@@ -154,11 +221,11 @@ CREATE TABLE `record` (
   `rname` varchar(255) NOT NULL,
   `rmainartist` varchar(255) NOT NULL COMMENT '主要艺人',
   `rdate` date DEFAULT NULL,
-  `rcid` int(11) DEFAULT NULL COMMENT 'company',
-  `rlid` int(11) DEFAULT NULL COMMENT 'language',
-  `rtid` int(11) DEFAULT NULL COMMENT 'type',
+  `rcid` int(11) NOT NULL COMMENT 'company',
+  `rlid` int(11) NOT NULL COMMENT 'language',
+  `rtid` int(11) NOT NULL COMMENT 'type',
   `rcoverpath` varchar(255) DEFAULT NULL COMMENT '封面图片',
-  `rgid` int(11) DEFAULT NULL COMMENT 'style',
+  `rgid` int(11) NOT NULL COMMENT 'style',
   PRIMARY KEY (`rid`),
   KEY `fkACID` (`rcid`),
   KEY `fkALID` (`rlid`),
@@ -168,26 +235,75 @@ CREATE TABLE `record` (
   CONSTRAINT `fkACID` FOREIGN KEY (`rcid`) REFERENCES `company` (`cid`),
   CONSTRAINT `fkAGID` FOREIGN KEY (`rtid`) REFERENCES `type` (`tid`),
   CONSTRAINT `fkALID` FOREIGN KEY (`rlid`) REFERENCES `language` (`lid`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of record
 -- ----------------------------
-INSERT INTO `record` VALUES ('1', '陪你度过漫长岁月', '长者', '2016-09-15', '1', '1', '1', null, '1');
-INSERT INTO `record` VALUES ('2', '一切随风', '钟镇涛', '2003-07-01', '2', '2', '2', null, '1');
-INSERT INTO `record` VALUES ('3', '男人悲剧', '绿林好汉', '2016-08-01', '2', '2', '1', null, '2');
-INSERT INTO `record` VALUES ('4', '曾经', '沧海难为水', '2011-09-20', '3', '1', '1', null, '1');
-INSERT INTO `record` VALUES ('5', '笑一笑', '李严肃', '2016-09-12', '4', '1', '1', null, '2');
-INSERT INTO `record` VALUES ('6', '不同班同学', '孙浩鹏', '2016-09-13', '5', '2', '1', null, '1');
-INSERT INTO `record` VALUES ('7', '来日方长', '方长', '2016-09-12', '6', '1', '1', null, '2');
-INSERT INTO `record` VALUES ('8', '出发', '周润发', '2008-05-12', '7', '1', '2', null, '1');
-INSERT INTO `record` VALUES ('9', '相爱恨早', '林妙可', '2016-07-10', '8', '1', '1', null, '1');
-INSERT INTO `record` VALUES ('10', '去伊犁的路上', '胡锦涛', '2013-11-01', '9', '1', '1', null, '1');
-INSERT INTO `record` VALUES ('11', '阿密特2', '阿凡达', '2015-04-04', '2', '1', '2', null, '1');
-INSERT INTO `record` VALUES ('12', '周杰伦的床边故事', '侯佩岑', '2016-06-24', '10', '1', '1', null, '1');
-INSERT INTO `record` VALUES ('14', 'Japan Album :Coup D\'etat+one of A Kind&Heartbreaker', 'Kishi Aino', '2013-11-27', '11', '3', '2', null, '3');
-INSERT INTO `record` VALUES ('15', 'Cold Water', 'Hot Shower', '2016-09-09', '12', '4', '3', null, '4');
-INSERT INTO `record` VALUES ('16', 'Dig Out Your Soul', 'Oasis', '2008-10-06', null, null, null, null, null);
+INSERT INTO `record` VALUES ('1', '陪你度过漫长岁月', '长者', '2016-09-15', '1', '1', '1', '1.jpg', '1');
+INSERT INTO `record` VALUES ('2', '一切随风', '钟镇涛', '2003-07-01', '12', '2', '2', '2.jpg', '1');
+INSERT INTO `record` VALUES ('3', '男人悲剧', '绿林好汉', '2016-08-01', '12', '2', '1', '3.jpg', '2');
+INSERT INTO `record` VALUES ('4', '曾经', '沧海难为水', '2011-09-20', '3', '1', '1', '4.jpg', '1');
+INSERT INTO `record` VALUES ('5', '笑一笑', '李严肃', '2016-09-12', '4', '1', '1', '5.jpg', '2');
+INSERT INTO `record` VALUES ('6', '不同班同学', '孙浩鹏', '2016-09-13', '5', '2', '1', '6.jpg', '1');
+INSERT INTO `record` VALUES ('7', '来日方长', '方长', '2016-09-12', '6', '1', '1', '7.jpg', '2');
+INSERT INTO `record` VALUES ('8', '出发', '周润发', '2008-05-12', '7', '1', '2', '8.jpg', '1');
+INSERT INTO `record` VALUES ('9', '相爱恨早', '林妙可', '2016-07-10', '8', '1', '1', '9.jpg', '1');
+INSERT INTO `record` VALUES ('10', '去伊犁的路上', '胡锦涛', '2013-11-01', '9', '1', '1', '10.jpg', '1');
+INSERT INTO `record` VALUES ('11', '阿密特2', '阿凡达', '2015-04-04', '12', '1', '2', '11.jpg', '1');
+INSERT INTO `record` VALUES ('12', '周杰伦的床边故事', '侯佩岑', '2016-06-24', '10', '1', '1', '12.jpg', '1');
+INSERT INTO `record` VALUES ('14', 'Japan Album :Coup D\'etat+one of A Kind&Heartbreaker', 'Kishi Aino', '2013-11-27', '11', '3', '2', '13.jpg', '3');
+INSERT INTO `record` VALUES ('15', 'Cold Water', 'Hot Shower', '2016-09-09', '12', '4', '3', '14.jpg', '4');
+INSERT INTO `record` VALUES ('16', 'Dig Out Your Soul', 'Oasis', '2008-10-06', '3', '1', '3', '15.jpg', '4');
+INSERT INTO `record` VALUES ('17', '7妹', '7妹', '2016-10-13', '1', '1', '3', '7妹.jpg', '4');
+INSERT INTO `record` VALUES ('18', 'A', 'BigBang', '2016-10-13', '1', '3', '3', 'BigBang A.jpg', '3');
+INSERT INTO `record` VALUES ('19', 'ALIVE', 'BigBang', '2016-10-13', '1', '3', '3', 'BigBang ALIVE.jpg', '3');
+INSERT INTO `record` VALUES ('20', 'M', 'BigBang', '2016-10-13', '1', '3', '3', 'BigBang M.jpg', '3');
+INSERT INTO `record` VALUES ('21', 'E', 'BigBang', '2016-10-13', '1', '3', '3', 'BIGBANG.jpg', '3');
+INSERT INTO `record` VALUES ('22', 'Cold Water', '华语群星', '2016-10-13', '1', '4', '3', 'Cold Water.jpg', '1');
+INSERT INTO `record` VALUES ('23', 'Demi', '华语群星', '2016-10-13', '1', '2', '5', 'Demi Lovato.jpg', '2');
+INSERT INTO `record` VALUES ('24', 'G-D', 'BigBang', '2016-10-13', '1', '3', '3', 'GD.jpg', '3');
+INSERT INTO `record` VALUES ('25', '蜜月', '华语群星', '2016-10-13', '1', '4', '3', 'Honeymoon.jpg', '1');
+INSERT INTO `record` VALUES ('26', 'WELCOME BACK', 'iKON', '2016-10-13', '1', '3', '3', 'iKON.jpg', '3');
+INSERT INTO `record` VALUES ('27', 'CHAT', 'IU', '2016-10-13', '1', '3', '3', 'IU.jpg', '3');
+INSERT INTO `record` VALUES ('28', 'SORRY', 'Just Bieber', '2016-10-13', '1', '4', '3', 'Just Bieber.jpg', '2');
+INSERT INTO `record` VALUES ('30', '高迪锦集', 'MC高迪', '2016-10-13', '1', '1', '3', 'MC高迪.jpg', '4');
+INSERT INTO `record` VALUES ('31', '1ST MIN', '华语群星', '2016-10-13', '1', '4', '3', 'one.jpg', '1');
+INSERT INTO `record` VALUES ('32', '中国好声音', '华语群星', '2016-10-13', '1', '1', '3', '中国好声音.jpg', '2');
+INSERT INTO `record` VALUES ('33', 'rice', '陈奕迅', '2016-10-13', '1', '3', '3', 'rice.jpg', '1');
+INSERT INTO `record` VALUES ('34', 'Still Alive', '华语群星', '2016-10-13', '1', '1', '3', 'still Alive.jpg', '1');
+INSERT INTO `record` VALUES ('35', '青春修炼手册', 'TFBOYS', '2016-10-13', '1', '1', '3', 'TFBOYS.jpg', '1');
+INSERT INTO `record` VALUES ('36', '中国好声音第四季', '华语群星', '2016-10-13', '1', '1', '3', '中国好声音第四季.jpg', '1');
+INSERT INTO `record` VALUES ('37', 'TJapan', 'BigBang', '2016-10-13', '1', '3', '3', 'TJapan.jpg', '3');
+INSERT INTO `record` VALUES ('38', '绅士', '薛之谦 ', '2016-10-13', '1', '1', '3', '薛之谦 绅士.jpg', '1');
+INSERT INTO `record` VALUES ('39', '1121', '陈伟霆', '2016-10-13', '1', '2', '3', '陈伟霆.jpg', '1');
+INSERT INTO `record` VALUES ('40', '富士山下', '陈奕迅.jpg', '2016-10-13', '1', '2', '3', '陈奕迅.jpg', '1');
+INSERT INTO `record` VALUES ('41', '范特西', '周杰伦', '2016-10-13', '1', '2', '3', '范特西.jpg', '1');
+INSERT INTO `record` VALUES ('42', '复刻记忆', '方大同', '2016-10-13', '1', '1', '3', '方大同.jpg', '1');
+INSERT INTO `record` VALUES ('43', '拿得起放不下', '高进', '2016-10-13', '1', '1', '3', '高进.jpg', '1');
+INSERT INTO `record` VALUES ('44', '夏洛特烦恼', '华语群星', '2016-10-13', '1', '1', '3', '华语群星.jpg', '2');
+INSERT INTO `record` VALUES ('45', 'HONEST', '井恩然', '2016-10-13', '1', '1', '3', '井恩然 .jpg', '1');
+INSERT INTO `record` VALUES ('46', '克拉恋人', '华语群星', '2016-10-13', '1', '1', '3', '克拉恋人.jpg', '1');
+INSERT INTO `record` VALUES ('47', '中国好声音第四季10集', '华语群星', '2016-10-13', '1', '1', '3', '中国好声音第四季10集.jpg', '2');
+INSERT INTO `record` VALUES ('48', '跨时代', '周杰伦', '2016-10-13', '1', '1', '3', '跨时代.jpg', '1');
+INSERT INTO `record` VALUES ('49', '宅男', '李琦', '2016-10-13', '1', '1', '3', '李琦.jpg', '1');
+INSERT INTO `record` VALUES ('50', '李白', '李荣浩', '2016-10-13', '1', '1', '3', '李荣浩.jpg', '1');
+INSERT INTO `record` VALUES ('51', 'JJ陆', '林俊杰', '2016-10-13', '1', '1', '3', '林俊杰 JJ陆.jpg', '2');
+INSERT INTO `record` VALUES ('52', '她说', '林俊杰', '2016-10-13', '1', '1', '3', '林俊杰 她说.jpg', '2');
+INSERT INTO `record` VALUES ('53', '新地球', '林俊杰', '2016-10-13', '1', '1', '3', '林俊杰 新地球.jpg', '2');
+INSERT INTO `record` VALUES ('54', '琅琊榜', '孟可', '2016-10-13', '1', '1', '3', '孟可.jpg', '2');
+INSERT INTO `record` VALUES ('55', '你的陈奕迅', '陈奕迅', '2016-10-13', '1', '1', '3', '你的陈奕迅.jpg', '1');
+INSERT INTO `record` VALUES ('56', '十二新作', '周杰伦', '2016-10-13', '1', '1', '3', '十二新作.jpg', '1');
+INSERT INTO `record` VALUES ('57', '十一月的肖邦', '周杰伦', '2016-10-13', '1', '1', '3', '十一月的肖邦.jpg', '1');
+INSERT INTO `record` VALUES ('58', '王妃', '萧敬腾', '2016-10-13', '1', '1', '3', '萧敬腾.jpg', '1');
+INSERT INTO `record` VALUES ('59', '笑一笑', '刘德华', '2016-10-13', '1', '1', '3', '笑一笑.jpg', '1');
+INSERT INTO `record` VALUES ('60', '蓝莲花', '许巍', '2016-10-13', '1', '1', '3', '许巍.jpg', '2');
+INSERT INTO `record` VALUES ('61', 'A+', '炫雅', '2016-10-13', '1', '3', '3', '炫雅.jpg', '3');
+INSERT INTO `record` VALUES ('62', '初爱', '杨忠伟', '2016-10-13', '1', '1', '3', '杨忠伟.jpg', '2');
+INSERT INTO `record` VALUES ('63', '栀子花开', '华语群星', '2016-10-13', '1', '1', '3', '栀子花开.jpg', '1');
+INSERT INTO `record` VALUES ('64', '庄心妍情歌精选集', '庄心妍', '2016-10-13', '1', '1', '3', '庄心妍情歌精选集.jpg', '2');
+INSERT INTO `record` VALUES ('65', '哎呦不错哦', '周杰伦', '2016-10-13', '1', '1', '3', '周杰伦.jpg', '1');
+INSERT INTO `record` VALUES ('177', 'x&y', 'coldplay', '2005-06-06', '12', '4', '2', 'x&y.jpg', '5');
 
 -- ----------------------------
 -- Table structure for `song`
@@ -208,26 +324,38 @@ CREATE TABLE `song` (
   KEY `sduration` (`sid`),
   CONSTRAINT `said-aid` FOREIGN KEY (`said`) REFERENCES `artist` (`aid`),
   CONSTRAINT `srid-rid` FOREIGN KEY (`srid`) REFERENCES `record` (`rid`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of song
 -- ----------------------------
-INSERT INTO `song` VALUES ('1', '陪你度过漫长岁月', '1', '1', '黎晓阳/谢国维', '00:00:00', '黎晓阳/谢国维');
-INSERT INTO `song` VALUES ('2', '一切随风', '2', '2', '唐奕聪', '00:00:00', null);
-INSERT INTO `song` VALUES ('3', '我', '2', '2', '张国荣', '00:00:00', '赵增熹');
-INSERT INTO `song` VALUES ('4', '男人悲剧', '3', '3', null, '00:00:00', null);
-INSERT INTO `song` VALUES ('5', '曾经', '4', '4', '张简君伟', '00:00:00', null);
-INSERT INTO `song` VALUES ('6', '笑一笑', '5', '5', '陈建德', '00:00:00', 'Adam Lee/蔡晓恩');
-INSERT INTO `song` VALUES ('7', '不同班同学', '6', '6', '曾奕文', '00:00:00', '何秉舜');
-INSERT INTO `song` VALUES ('8', '来日方长', '7', '7', '常石磊/袁娅维', '00:00:00', '常石磊');
-INSERT INTO `song` VALUES ('9', '骑单车的日子', '8', '8', '金大洲', '00:00:00', '彭程');
-INSERT INTO `song` VALUES ('10', '相爱恨早', '9', '9', '钱雷', '00:00:00', '捞仔');
-INSERT INTO `song` VALUES ('11', '去伊犁的路上', '10', '10', '刀郎', '00:00:00', '刀郎');
-INSERT INTO `song` VALUES ('12', '不睡', '11', '11', '陈珊妮', '00:00:00', null);
-INSERT INTO `song` VALUES ('13', '说走就走', '12', '12', '周杰伦', '00:00:00', '周杰伦');
-INSERT INTO `song` VALUES ('14', 'R.O.D.', '14', '14', 'TEDDY', '00:00:00', 'TEDDY');
-INSERT INTO `song` VALUES ('15', 'Cold Water(Lost Frequencies Remix)', '15', '15', 'King Henry/Benny Blanco/Jr Blender/Diplo', '00:00:00', null);
+INSERT INTO `song` VALUES ('1', '陪你度过漫长岁月', '1', '1', '黎晓阳/谢国维', '00:04:13', '黎晓阳/谢国维');
+INSERT INTO `song` VALUES ('2', '一切随风', '2', '2', '唐奕聪', '00:04:13', null);
+INSERT INTO `song` VALUES ('3', '我', '2', '2', '张国荣', '00:04:13', '赵增熹');
+INSERT INTO `song` VALUES ('4', '男人悲剧', '3', '3', null, '00:04:13', null);
+INSERT INTO `song` VALUES ('5', '曾经', '4', '4', '张简君伟', '00:04:13', null);
+INSERT INTO `song` VALUES ('6', '笑一笑', '5', '5', '陈建德', '00:04:13', 'Adam Lee/蔡晓恩');
+INSERT INTO `song` VALUES ('7', '不同班同学', '6', '6', '曾奕文', '00:04:13', '何秉舜');
+INSERT INTO `song` VALUES ('8', '来日方长', '7', '7', '常石磊/袁娅维', '00:04:13', '常石磊');
+INSERT INTO `song` VALUES ('9', '骑单车的日子', '8', '8', '金大洲', '00:04:13', '彭程');
+INSERT INTO `song` VALUES ('10', '相爱恨早', '9', '9', '钱雷', '00:04:13', '捞仔');
+INSERT INTO `song` VALUES ('11', '去伊犁的路上', '10', '10', '刀郎', '00:04:13', '刀郎');
+INSERT INTO `song` VALUES ('12', '不睡', '11', '11', '陈珊妮', '00:04:13', null);
+INSERT INTO `song` VALUES ('13', '说走就走', '12', '12', '周杰伦', '00:04:13', '周杰伦');
+INSERT INTO `song` VALUES ('14', 'R.O.D.', '14', '14', 'TEDDY', '00:04:13', 'TEDDY');
+INSERT INTO `song` VALUES ('15', 'Cold Water(Lost Frequencies Remix)', '15', '15', 'King Henry/Benny Blanco/Jr Blender/Diplo', '00:04:13', null);
+INSERT INTO `song` VALUES ('16', 'Squere One', '177', '108', 'Christ Martin', '00:04:47', 'Christ Martin');
+INSERT INTO `song` VALUES ('17', 'What if', '177', '108', 'Christ Martin', '00:04:56', 'Christ Martin');
+INSERT INTO `song` VALUES ('18', 'White Shadows', '177', '108', 'Christ Martin', '00:05:27', 'Christ Martin');
+INSERT INTO `song` VALUES ('19', 'Fix You', '177', '108', 'Christ Martin', '00:04:54', 'Christ Martin');
+INSERT INTO `song` VALUES ('20', 'Talk', '177', '108', 'Christ Martin', '00:05:10', 'Christ Martin');
+INSERT INTO `song` VALUES ('21', 'X&Y', '177', '108', 'Christ Martin', '00:04:33', 'Christ Martin');
+INSERT INTO `song` VALUES ('22', 'Speed Of Sound', '177', '108', 'Christ Martin', '00:04:48', 'Christ Martin');
+INSERT INTO `song` VALUES ('23', 'A Message', '177', '108', 'Christ Martin', '00:04:44', 'Christ Martin');
+INSERT INTO `song` VALUES ('24', 'Low', '177', '108', 'Christ Martin', '00:05:31', 'Christ Martin');
+INSERT INTO `song` VALUES ('25', 'Hardest Part', '177', '108', 'Christ Martin', '00:04:24', 'Christ Martin');
+INSERT INTO `song` VALUES ('26', 'Swallowed In The Sea', '177', '108', 'Christ Martin', '00:03:58', 'Christ Martin');
+INSERT INTO `song` VALUES ('27', 'Twisted Logic', '177', '108', 'Christ Martin', '00:05:01', 'Christ Martin');
 
 -- ----------------------------
 -- Table structure for `songlist`
@@ -243,7 +371,7 @@ CREATE TABLE `songlist` (
   KEY `fkSID` (`slsid`),
   CONSTRAINT `slsid-sid` FOREIGN KEY (`slsid`) REFERENCES `song` (`sid`),
   CONSTRAINT `slsmid-smid` FOREIGN KEY (`slsmid`) REFERENCES `songlistmanage` (`smid`)
-) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of songlist
@@ -278,6 +406,151 @@ INSERT INTO `songlist` VALUES ('138', '3', '3', '2016-10-09 22:03:05');
 INSERT INTO `songlist` VALUES ('139', '3', '1', '2016-10-09 22:03:05');
 INSERT INTO `songlist` VALUES ('140', '3', '3', '2016-10-09 22:03:05');
 INSERT INTO `songlist` VALUES ('141', '3', '4', '2016-10-09 22:03:05');
+INSERT INTO `songlist` VALUES ('142', '1', '16', '2016-10-14 09:08:03');
+INSERT INTO `songlist` VALUES ('143', '1', '16', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('144', '1', '17', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('145', '1', '18', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('146', '1', '19', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('147', '1', '20', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('148', '1', '21', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('149', '1', '22', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('150', '1', '23', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('151', '1', '24', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('152', '1', '25', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('153', '1', '26', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('154', '1', '27', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('155', '1', '16', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('156', '1', '17', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('157', '1', '18', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('158', '1', '19', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('159', '1', '20', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('160', '1', '21', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('161', '1', '22', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('162', '1', '23', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('163', '1', '24', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('164', '1', '25', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('165', '1', '26', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('166', '1', '27', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('167', '1', '16', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('168', '1', '17', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('169', '1', '18', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('170', '1', '19', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('171', '1', '20', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('172', '1', '21', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('173', '1', '22', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('174', '1', '23', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('175', '1', '24', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('176', '1', '25', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('177', '1', '26', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('178', '1', '27', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('179', '1', '16', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('180', '1', '17', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('181', '1', '18', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('182', '1', '19', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('183', '1', '20', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('184', '1', '21', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('185', '1', '22', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('186', '1', '23', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('187', '1', '24', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('188', '1', '25', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('189', '1', '26', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('190', '1', '27', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('191', '1', '16', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('192', '1', '17', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('193', '1', '18', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('194', '1', '19', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('195', '1', '20', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('196', '1', '21', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('197', '1', '22', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('198', '1', '23', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('199', '1', '24', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('200', '1', '25', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('201', '1', '26', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('202', '1', '27', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('203', '1', '16', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('204', '1', '17', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('205', '1', '18', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('206', '1', '19', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('207', '1', '20', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('208', '1', '21', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('209', '1', '22', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('210', '1', '23', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('211', '1', '24', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('212', '1', '25', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('213', '1', '26', '2016-10-14 09:08:39');
+INSERT INTO `songlist` VALUES ('214', '1', '1', '2016-10-14 15:03:48');
+INSERT INTO `songlist` VALUES ('215', '1', '16', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('216', '1', '17', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('217', '1', '18', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('218', '1', '19', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('219', '1', '20', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('220', '1', '21', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('221', '1', '22', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('222', '1', '23', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('223', '1', '24', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('224', '1', '25', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('225', '1', '26', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('226', '1', '27', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('227', '1', '16', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('228', '1', '17', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('229', '1', '18', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('230', '1', '19', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('231', '1', '20', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('232', '1', '21', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('233', '1', '22', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('234', '1', '23', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('235', '1', '24', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('236', '1', '25', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('237', '1', '26', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('238', '1', '27', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('239', '1', '16', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('240', '1', '17', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('241', '1', '18', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('242', '1', '19', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('243', '1', '20', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('244', '1', '21', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('245', '1', '22', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('246', '1', '23', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('247', '1', '24', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('248', '1', '25', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('249', '1', '26', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('250', '1', '27', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('251', '1', '16', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('252', '1', '17', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('253', '1', '18', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('254', '1', '19', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('255', '1', '20', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('256', '1', '21', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('257', '1', '22', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('258', '1', '23', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('259', '1', '24', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('260', '1', '25', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('261', '1', '26', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('262', '1', '27', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('263', '1', '16', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('264', '1', '17', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('265', '1', '18', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('266', '1', '19', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('267', '1', '20', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('268', '1', '21', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('269', '1', '22', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('270', '1', '23', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('271', '1', '24', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('272', '1', '25', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('273', '1', '26', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('274', '1', '27', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('275', '1', '16', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('276', '1', '17', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('277', '1', '18', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('278', '1', '19', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('279', '1', '20', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('280', '1', '21', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('281', '1', '22', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('282', '1', '23', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('283', '1', '24', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('284', '1', '25', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('285', '1', '26', '2016-10-16 19:46:24');
+INSERT INTO `songlist` VALUES ('286', '1', '27', '2016-10-16 19:46:24');
 
 -- ----------------------------
 -- Table structure for `songlistmanage`
