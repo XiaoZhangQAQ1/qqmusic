@@ -84,6 +84,7 @@
 		var max="${maxPage}";
 		var current="${currentPage}";
 		pageButtonBulider(max,current);
+		//$('prev').attr("href","profile?currentPage="+current);
 		$("body").click(function() {
 			console.log('bodyclickED');
 			console.log(clickEvent);
@@ -92,7 +93,7 @@
 			}
 		});
 
-	}
+	};
 </script>
 
 
@@ -670,7 +671,7 @@
 					<div id="dickson" class="mod_page_nav js_pager"></div>
 					<!-- 控制分页按钮 -->
 					<script type="text/javascript">
-					
+						
 						
 					</script>
 				</div>

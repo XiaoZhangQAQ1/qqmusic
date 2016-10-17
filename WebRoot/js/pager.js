@@ -21,7 +21,7 @@
 			$('#dickson').children().remove();
 			/* 上一页按钮 */
 			if(current!=1){
-				$('#dickson').append("<a href='javascript:;' class='prev js_pageindex'  title='上一页' hidefocus=''><span>&lt;</span></a>");
+				$('#dickson').append("<a href='profile?currentPage="+(current-1)+"' class='prev js_pageindex'  title='上一页' hidefocus=''><span>&lt;</span></a>");
 			}
 			/* 中间选页按钮 (当前页<5)  包含  [1] [2] [3] [4] [5]  */
 			if(current<=5){
@@ -32,7 +32,7 @@
 								$('#dickson').append("<strong class='current'>"+current+"</strong>");
 						}
 						else{
-							$('#dickson').append("<a href='javascript:;' class='js_pageindex' >"+i+"</a>");
+							$('#dickson').append("<a href='profile?currentPage="+i+"' class='js_pageindex' >"+i+"</a>");
 						}
 					}
 				}
@@ -43,14 +43,14 @@
 							$('#dickson').append("<strong class='current'>"+current+"</strong>");
 						}
 						else{
-							$('#dickson').append("<a href='javascript:;' class='js_pageindex' >"+i+"</a>");
+							$('#dickson').append("<a href='profile?currentPage="+i+"' class='js_pageindex' >"+i+"</a>");
 						}
 					}
 				}
 			}
 			/* 中间选页按钮 (当前页>5)  包含 ...  [x-2] [x-1] [x] [x+1] [x+2]  */
 			else if(current>5){
-				$('#dickson').append("<a href='javascript:;' class='js_pageindex' >1</a>");
+				$('#dickson').append("<a href='profile?currentPage=1' class='js_pageindex' >1</a>");
 				$('#dickson').append("<strong class='more'>...</strong>");
 				var i;
 				for(i=current-2;i<=current+2;i++){
@@ -58,7 +58,7 @@
 						$('#dickson').append("<strong class='current'>"+current+"</strong>");
 					}
 					else if(i<=max){
-						$('#dickson').append("<a href='javascript:;' class='js_pageindex' >"+i+"</a>");
+						$('#dickson').append("<a href='profile?currentPage="+i+"' class='js_pageindex' >"+i+"</a>");
 					}
 				}
 			}
@@ -67,11 +67,12 @@
 				if((max-current)>=2&&(max-5)>1){
 					$('#dickson').append("<strong class='more'>...</strong>");
 				}
-				$('#dickson').append("<a href='javascript:;' class='js_pageindex' >"+max+"</a>");
+				$('#dickson').append("<a href='profile?currentPage="+max+"' class='js_pageindex' >"+max+"</a>");
 			}
 			/* 下一页按钮 */
 			if(current!=max){
-				$('#dickson').append("<a href='javascript:;' class='next js_pageindex'  title='下一页' hidefocus=''><span>&gt;</span></a>");
+				
+				$('#dickson').append("<a href='profile?currentPage="+(current-(-1))+"' class='next js_pageindex'  title='下一页' hidefocus=''><span>&gt;</span></a>");
 			}
 		
 		}
