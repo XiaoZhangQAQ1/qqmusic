@@ -17,6 +17,7 @@ import com.bdqn.qqmusic.pojo.User;
 public class SongListManageService implements ISongListManageSevice {
 	
 	//域
+	private Integer sid;
 	private String songName;
 	private String artistName;
 	private String recordName;
@@ -53,6 +54,7 @@ public class SongListManageService implements ISongListManageSevice {
 				SongListManageService instance=new SongListManageService();
 				//打包
 				instance.setSongName(songList.getSong().getSname());
+				instance.setSid(songList.getSong().getSid());
 				instance.setArtistName(songList.getSong().getArtist().getAname());
 				instance.setRecordName(songList.getSong().getRecord().getRname());
 				instance.setDuration(songList.getSong().getSduration());
@@ -110,6 +112,14 @@ public class SongListManageService implements ISongListManageSevice {
 	}
 
 
+	public Integer getSid() {
+		return sid;
+	}
+
+	public void setSid(Integer sid) {
+		this.sid = sid;
+	}
+
 	public void setRecordName(String recordName) {
 		this.recordName = recordName;
 	}
@@ -138,6 +148,16 @@ public class SongListManageService implements ISongListManageSevice {
 		this.recordName = recordName;
 		this.duration = duration;
 	}
+
+		public SongListManageService(Integer sid, String songName,
+				String artistName, String recordName, Time duration) {
+			super();
+			this.sid = sid;
+			this.songName = songName;
+			this.artistName = artistName;
+			this.recordName = recordName;
+			this.duration = duration;
+		}
 
 
 	

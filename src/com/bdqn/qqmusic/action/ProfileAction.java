@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.struts2.ServletActionContext;
 
 import com.bdqn.qqmusic.pojo.SongListDAO;
+import com.bdqn.qqmusic.pojo.SongListManage;
 import com.bdqn.qqmusic.pojo.SongListManageDAO;
 import com.bdqn.qqmusic.pojo.User;
 import com.bdqn.qqmusic.pojo.UserDAO;
@@ -18,7 +19,10 @@ public class ProfileAction extends ActionSupport{
 	//域
 	private Integer currentPage;
 	private Integer maxPage;
+		//favor歌单曲面分页列表
 	private List<SongListManageService> songlist__list=new ArrayList<SongListManageService>();
+		//歌单列表
+	private List<SongListManage> SLIlist=new ArrayList<SongListManage>();
 	//取出HttpServletsession和HttpServletrequest对象
 	private  Map<String, Object> session=(Map<String, Object>)ActionContext.getContext().get("session");
 	private  Map<String, Object> request=(Map<String, Object>)ActionContext.getContext().get("request");
@@ -53,6 +57,7 @@ public class ProfileAction extends ActionSupport{
 		request.put("currentPage", currentPage);
 		
 		SongListManageDAO count=new SongListManageDAO();
+		
 		int size=SLMS.getMaxPageByGeDan(count.getFavList(user));
 		if((size%20)==0){
 			this.setMaxPage(size/20);
@@ -62,9 +67,9 @@ public class ProfileAction extends ActionSupport{
 		}
 		request.put("maxPage", maxPage);
 		System.out.println("最大页数为"+maxPage);
-		/**************分页按钮****************/
-		
-		
+		/**************具体歌单****************/
+		SLIlist=count.findByProperty("user", user);
+		request.put("SLIlist", SLIlist);
 		return SUCCESS;
 	}
 
@@ -91,6 +96,14 @@ public class ProfileAction extends ActionSupport{
 		this.songlist__list = songlist__list;
 	}
 
+	public List<SongListManage> getSLIlist() {
+		return SLIlist;
+	}
+
+	public void setSLIlist(List<SongListManage> sLIlist) {
+		SLIlist = sLIlist;
+	}
+
 	public ProfileAction(){}
 	public ProfileAction(Integer currentPage, Integer maxPage) {
 		super();
@@ -115,6 +128,19 @@ public class ProfileAction extends ActionSupport{
 		this.currentPage = currentPage;
 		this.maxPage = maxPage;
 		this.songlist__list = songlist__list;
+	}
+
+	public ProfileAction(Integer currentPage, Integer maxPage,
+			List<SongListManageService> songlist__list,
+			List<SongListManage> sLIlist, Map<String, Object> session,
+			Map<String, Object> request) {
+		super();
+		this.currentPage = currentPage;
+		this.maxPage = maxPage;
+		this.songlist__list = songlist__list;
+		SLIlist = sLIlist;
+		this.session = session;
+		this.request = request;
 	}
 	
 

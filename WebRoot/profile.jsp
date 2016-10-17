@@ -586,7 +586,7 @@
 							<!-- 开始favor列表遍历 -->
 						<s:iterator value="#request.SLMSSFav" var="list" status="index" >	
 						
-							<li mid="102796884" ix="30">
+							<li id="<s:property value="#list.sid" />">
 								<div class="js_song_li songlist__item"
 									onmouseover="bodyClickOff();this.className=(this.className+' songlist__item--hover')"
 									onmouseout="bodyClickOn();this.className=this.className.replace(/ songlist__item--hover/, '')">
@@ -1727,42 +1727,17 @@
 					class="operate_menu__link js_addto_taogelist operate_menu__link--disabled"
 					data-dirid="201" title="我喜欢 "><i
 						class="operate_menu__icon_like"></i>我喜欢 </a></li>
-
-				<li class="operate_menu__item"><a href="javascript:;"
-					class="operate_menu__link js_addto_taogelist" data-dirid="18"
-					title="Six ">Six </a></li>
-
-				<li class="operate_menu__item"><a href="javascript:;"
-					class="operate_menu__link js_addto_taogelist" data-dirid="17"
-					title="灰灯笼的逆袭 ">灰灯笼的逆袭 </a></li>
-
-				<li class="operate_menu__item"><a href="javascript:;"
-					class="operate_menu__link js_addto_taogelist" data-dirid="16"
-					title="xiami ">xiami </a></li>
-
-				<li class="operate_menu__item"><a href="javascript:;"
-					class="operate_menu__link js_addto_taogelist" data-dirid="12"
-					title="on the road ">on the road </a></li>
-
-				<li class="operate_menu__item"><a href="javascript:;"
-					class="operate_menu__link js_addto_taogelist" data-dirid="11"
-					title="Echobelly ">Echobelly </a></li>
-
-				<li class="operate_menu__item"><a href="javascript:;"
-					class="operate_menu__link js_addto_taogelist" data-dirid="10"
-					title="虾米歌单2016216191521 ">虾米歌单2016216191521 </a></li>
-
-				<li class="operate_menu__item"><a href="javascript:;"
-					class="operate_menu__link js_addto_taogelist" data-dirid="9"
-					title="虾米歌单2016216181155 ">虾米歌单2016216181155 </a></li>
-
-				<li class="operate_menu__item"><a href="javascript:;"
-					class="operate_menu__link js_addto_taogelist" data-dirid="1"
-					title="我最爱听 ">我最爱听 </a></li>
-
-				<li class="operate_menu__item"><a href="javascript:;"
-					class="operate_menu__link js_addto_taogelist" data-dirid="6"
-					title="favor ">favor </a></li>
+				<!-- 歌单选择遍历 -->
+				<s:iterator var="SLI" value="#request.SLIlist"  >
+					<li class="operate_menu__item">
+						<a href="<s:property value="#SLI.smid" />"
+						   class="operate_menu__link js_addto_taogelist" 
+						   title="<s:property value="#SLI.smname" />">
+							<s:property value="#SLI.smname" /> 
+						</a>
+					</li>
+				</s:iterator>
+				
 
 			</ul>
 			<a href="javascript:;" class="operate_menu__link js_addto_new"
