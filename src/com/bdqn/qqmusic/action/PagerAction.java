@@ -9,7 +9,7 @@ public class PagerAction extends ActionSupport {
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		maxPage=(int)(1+Math.random()*20);currentPage=(int)(1+Math.random()*maxPage);
-		//maxPage=2;currentPage=2;
+		//maxPage=6;currentPage=1;
 		System.out.println("random maxpage:"+maxPage);
 		System.out.println("random currentPage:"+currentPage);
 		return "pageNum";
@@ -29,6 +29,7 @@ public class PagerAction extends ActionSupport {
 	public PagerAction() {
 		// TODO Auto-generated constructor stub
 	}
+	
 	public PagerAction(int maxPage, int currentPage) {
 		super();
 		this.maxPage = maxPage;
