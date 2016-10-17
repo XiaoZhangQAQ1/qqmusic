@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
-<!--
-	为了避免servlet和struts2的路径撞车  
-	servlet的路径命名逻辑改为:/object.servlet 
-	例如AlbumServlet的路径,由原来的/album改为 
-	/album.servlet 
-	/album经过action类,访问效果和原来一样
-	具体可以到web.xml,com.bdqn.qqmusic.action.AlbumAction,com.bdqn.qqmusic.servlet.AlbumServlet
-	看 
--->
+
 
 <struts>
 	<!-- 这里默认就是utf-8 -->
@@ -18,18 +10,11 @@
 	<!-- 配置文件自动更新 -->
 	<constant name="struts.configuration.xml.reload" value="true"></constant>
 	<!-- ********************************华丽的分割线************************************ -->
-	<!-- *注意namespace="/",这里的设置全局action过滤器,struts本质是过滤器;				   * -->
-	<!-- *和servlet的路径撞车                                                                                                                      * -->		
+	
 	<!-- ********************************华丽的分割线************************************ -->		
 	<package name="default" namespace="/" extends="struts-default">
 	    
-	    <!-- "我的音乐"profile页action -->
-		<action name="profile"  class="com.bdqn.qqmusic.action.ProfileAction" >
-			<result name="success" type="dispatcher" >profile.jsp</result>
-			<!-- 检测登录状态待完成 -->
-			<result name="error">profile.jsp</result>	
-		</action>
-		
+	   
 		
 		
 		
@@ -46,7 +31,6 @@
 	</package>
 	<!-- json -->
 	<package name="json" namespace="/" extends="json-default">
-		<!-- 唔关事 -->
 		<action name="testJson" class="com.bdqn.qqmusic.action.SingerListAction">			
 			<result name="singerlist" type="json" >
 				<param name="includeProperties">
@@ -54,15 +38,21 @@
 				</param>
 			</result>
 		</action>
-		<!-- ↓↓就系E个action -->
- 		<action name="pager"  class="com.bdqn.qqmusic.action.PagerAction">
-			<result name="pageNum" type="json" >
+		
+ 		
+		 <!-- "我的音乐"profile页action -->
+		<action name="profile"  class="com.bdqn.qqmusic.action.ProfileAction" >
+			<result name="success" type="dispatcher" >profile.jsp</result>
+			<!-- 检测登录状态待完成 -->
+			<result name="error">profile.jsp</result>	
+		</action>
+		<action name="pager"  class="com.bdqn.qqmusic.action.ProfileAction">
+			<result name="success" type="json" >
 				<param name="includeProperties">
-					maxPage,currentPage
+					maxPage,currentPage,songlist__list.*
 				</param>
 			</result>		
-		</action> 
-			
+		</action> 	
 	</package>
 	
 </struts>    

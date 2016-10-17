@@ -25,84 +25,31 @@
 <script type="text/javascript">
 	$('#clear').click(function(){
 		$('#dickson').children().remove();
-	
+		
 	});
 </script>
 <div><input type="button" id="test" value="build"></div>
 <script type="text/javascript">
-	
-	
+	var max=9;
+  	var current=0;
+	var url="../pager";
   	$('#test').click(function(){
-		console.log('init json test');
-		$('#dickson').children().remove();
-		$.getJSON("../pager",function(data){
-		console.log('maxPage:'+data.maxPage+' currentPage:'+data.currentPage);
-		var max=data.maxPage;var current=data.currentPage;
-		//var max=4;var current=1;
-		if(max!=1){
-			/* 上一页按钮 */
-			if(current!=1){
-				$('#dickson').append("<a href='javascript:;' class='prev js_pageindex'  title='上一页' hidefocus=''><span>&lt;</span></a>");
-		
-			}
-			/* 中间选页按钮 (当前页<5)  包含  [1] [2] [3] [4] [5]  */
-			if(current<=5){
-				if(max<=5){
-					for(i=1;i<=max;i++){
-						if(i==current){
-								$('#dickson').append("<strong class='current'>"+current+"</strong>");
-						}
-						else{
-							$('#dickson').append("<a href='javascript:;' class='js_pageindex' >"+i+"</a>");
-						}
-					}
-				}
-				else{
-					for(i=1;i<=5;i++){
-						if(i==current){
-							$('#dickson').append("<strong class='current'>"+current+"</strong>");
-						}
-						else{
-							$('#dickson').append("<a href='javascript:;' class='js_pageindex' >"+i+"</a>");
-						}
-					}
-				}
-			}
-			/* 中间选页按钮 (当前页>5)  包含 ...  [x-2] [x-1] [x] [x+1] [x+2]  */
-			else if(current>5){
-				$('#dickson').append("<a href='javascript:;' class='js_pageindex' >1</a>");
-				$('#dickson').append("<strong class='more'>...</strong>");
-				for(i=current-2;i<=current+2;i++){
-					if(i==current){
-						$('#dickson').append("<strong class='current'>"+current+"</strong>");
-					}
-					else if(i<=max){
-						$('#dickson').append("<a href='javascript:;' class='js_pageindex' >"+i+"</a>");
-					}
-				}
-			}
-			/* ... max  */
-			if(current<=(max-3)&&max>5){
-				if((max-current)>3){
-					$('#dickson').append("<strong class='more'>...</strong>");
-				}
-				$('#dickson').append("<a href='javascript:;' class='js_pageindex' >"+max+"</a>");
-			}
-			/* 下一页按钮 */
-			if(current!=max){
-				$('#dickson').append("<a href='javascript:;' class='next js_pageindex'  title='下一页' hidefocus=''><span>&gt;</span></a>");
-			}
-		
-		}
-		});
-	});
+  		
+  		current++;
+  		$('#dickson').children().remove();
+  		pageButtonBulider(max,current);
+  		
+  	
+  	});
 
 		
 </script>
 <!-- 5 to max -->
 
 <div id="dickson" class="mod_page_nav js_pager" ></div>
-
+<!-- <audio src="http://m5.file.xiami.com/454/10454/56353/2053304_51341_l.mp3?auth_key=2e1a0e1b2b3bf1e4f3598d5f164b0bae-1477191600-0-null" controls="controls">
+Your browser does not support the audio element.
+</audio> -->
 
 	<div class="mod_page_nav js_pager">
 		

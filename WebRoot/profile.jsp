@@ -32,14 +32,17 @@
 	var _speedMark = new Date();
 </script>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/pager.js"></script>
 <script type="text/javascript">
 	/* 控制添加菜单弹出 */
 	var clickEvent;
 	function show() {
 		$('.mod_operate_menu').css('display', 'block');
+		//bodyClickOn();
 	}
 	function hide() {
 		$('.mod_operate_menu').css('display', 'none');
+		//bodyClickOff();
 	}
 
 	function menu(event) {
@@ -59,6 +62,7 @@
 				left : x + "px",
 				top : y + "px"
 			});
+			clickEvent="on";
 			show();
 		} else {
 			hide();
@@ -67,29 +71,36 @@
 	/*    */
 
 	function bodyClickOn() {
-		clickEvent = "on";
-		console.log(clickEvent);
+		clickEvent="on";
+		//console.log(clickEvent);
 
 	}
 
 	function bodyClickOff() {
 		clickEvent = "off";
-		console.log(clickEvent);
+		//console.log(clickEvent);
 
 	}
 
-	//ONLOAD
+	//ONLOAD 加载时
 	 window.onload = function() {
+		var max="${maxPage}";
+		var current="${currentPage}";
+		console.log('maxPage: '+max+'currentPage: '+current);
+		//var pagerUrl="pager";
+		//加载分页按钮
+		pageButtonBulider(max,current);
 		
-		$("body").click(function() {
-			console.log('bodyclickED');
-			console.log(clickEvent);
-			if (clickEvent == "on") {
+		//菜单控制
+		$(".js_song_li").click(function() {
+			if ($('.mod_operate_menu').css('display') == "block") {
+				if(clickEvent=="on"){
 				hide();
+				}	
 			}
 		});
-
-	}
+		
+	};
 </script>
 
 
@@ -559,7 +570,7 @@
 							class="mod_btn js_all_fav"
 							data-stat="y_new.profile.like.song.addall"><i
 							class="mod_btn__icon_add"></i>添加到</a> <a href="javascript:;"
-							class="mod_btn js_all_down" onclick="hide()"
+							class="mod_btn js_all_down" onclick="show()"
 							data-stat="y_new.profile.like.song.downloadall"><i
 							class="mod_btn__icon_down"></i>下载</a> <a href="javascript:;"
 							class="mod_btn js_batch"
@@ -584,8 +595,8 @@
 						
 							<li mid="102796884" ix="30">
 								<div class="js_song_li songlist__item"
-									onmouseover="bodyClickOff();this.className=(this.className+' songlist__item--hover')"
-									onmouseout="bodyClickOn();this.className=this.className.replace(/ songlist__item--hover/, '')">
+									onmouseover="this.className=(this.className+' songlist__item--hover')"
+									onmouseout="this.className=this.className.replace(/ songlist__item--hover/, '')">
 									<div class="songlist__edit songlist__edit--check">
 										<input type="checkbox" class="songlist__checkbox">
 									</div>
@@ -664,19 +675,21 @@
 						</ul>
 					</div>
 					<!-- 分页按钮 -->
-					<div class="mod_page_nav js_pager">
-						<strong class="current">1</strong>
-						<a href="javascript:;" class="js_pageindex"  >2</a>
-						<a href="javascript:;" class="js_pageindex" >3</a>
-						<a href="javascript:;" class="current" >4</a>
-						<a href="javascript:;" class="next js_pageindex"  title="下一页" >
-						<span>&gt;</span>
-						</a>
-					</div>
+					<div id="dickson" class="mod_page_nav js_pager"></div>
 					<!-- 控制分页按钮 -->
 					<script type="text/javascript">
-					
-						
+					     $('.js_pageindex').click(function(){
+					     	console.log('test init');
+					     	var index;
+					     	index=this.html();
+					     	console.log('clicked index: '+index);
+					     });
+					     
+					     $('.prev').click(function(){
+					     	console.log(current+1);
+					     
+					     
+					     });
 					</script>
 				</div>
 				<!-- 以下三个盒子因为没有数据,和暂时还不想做,先空着 -->

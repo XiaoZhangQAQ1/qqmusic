@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>testXIAMIAPI.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+  </head>
+  
+  <body>
+  		<div><a href="javascript:void(0);">http://xiami.carp.mopaasapp.com/</a></div>
+  		<div><a href="javascript:void(0);">GET /song/:id</a></div>
+  		<div><a href="javascript:void(0);">GET /album/:id</a></div>
+  		<div><a href="javascript:void(0);">GET /collection/:id</a></div>
+   		<input id="sourceID" value="collection/30456722"/>
+    	<input id="getXIAMIResource" type="button" value="点击输入虾米歌单id"/>
+    	
+    	    	
+    	<table class="list" >
+    		<tr id="cover"></tr>
+    		<tr id="name" ></tr>	
+    		<tr id="artist"></tr>	
+    		<tr id="album"></tr>	
+    		<tr id="player"></tr>	
+    		
+    	</table>
+    	<ul class="list"></ul>
+    	<script type="text/javascript">
+    	 var collection="http://xiami.carp.mopaasapp.com/";
+    	 var xiamiURL;
+    		$('#getXIAMIResource').click(function(){
+    			//$('.list').children().remove();
+    			xiamiURL=collection+$('#sourceID').val();
+    			console.log('url='+xiamiURL);
+    			$.getJSON(xiamiURL,function(data){
+    				$.each(data,function(i,value){
+    					console.log("value.url: "+value.url);
+    					
+    					$('#cover').append("<td><img src="+value.cover+"></td>");
+    					$('#name').append("<td>"+value.name+"</td>");
+    					$('#artist').append("<td>"+value.artist+"</td>");
+    					$('#album').append("<td>"+value.album+"</td>");
+    					$('#player').append("<td><audio src="+value.url+" controls='controls' ></audio></td>");
+    					//$('#name').append("<td><img id= src="+value.cover+"></td>");
+    					//$('#box').append("<li><audio src="+value.url+" controls='controls' ></audio</li>");
+    				
+    				});
+    			});
+    		
+    		
+    		});
+    	
+    	</script>
+   
+  </body>
+</html>
