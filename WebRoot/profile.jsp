@@ -32,6 +32,7 @@
 	var _speedMark = new Date();
 </script>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/pager.js"></script>
 <script type="text/javascript">
 	/* 控制添加菜单弹出 */
 	var clickEvent;
@@ -80,7 +81,9 @@
 
 	//ONLOAD
 	 window.onload = function() {
-		
+		var max="${maxPage}";
+		var current="${currentPage}";
+		pageButtonBulider(max,current);
 		$("body").click(function() {
 			console.log('bodyclickED');
 			console.log(clickEvent);
@@ -664,15 +667,7 @@
 						</ul>
 					</div>
 					<!-- 分页按钮 -->
-					<div class="mod_page_nav js_pager">
-						<strong class="current">1</strong>
-						<a href="javascript:;" class="js_pageindex" data-index="2" hidefocus="">2</a>
-						<a href="javascript:;" class="js_pageindex" data-index="3"hidefocus="">3</a>
-						<a href="javascript:;" class="current"data-index="4" hidefocus="">4</a>
-						<a href="javascript:;" class="next js_pageindex" data-index="2" title="下一页" hidefocus="">
-						<span>&gt;</span>
-						</a>
-					</div>
+					<div id="dickson" class="mod_page_nav js_pager"></div>
 					<!-- 控制分页按钮 -->
 					<script type="text/javascript">
 					
