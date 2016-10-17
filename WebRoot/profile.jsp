@@ -334,7 +334,7 @@
 					data-stat="music.20317.btnclick.pc" href="javascript:;">开通付费包</a> </span>
 
 				<!-- 用户信息 -->
-				<div class="popup_user" style="">
+				<div class="popup_user"  style="">
 					<div class="popup_user_data">
 						<a
 							href="http://y.qq.com/portal/profile.html#stat=y_new.top.pop.user_pic"><img
@@ -388,6 +388,18 @@
 						<div class="popup_top_login__tips">开通绿钻豪华版 赠送付费音乐包</div>
 					</div>
 				</div>
+				<!-- 注销菜单 -->
+				<script type="text/javascript">
+					$('.header__opt').mouseover(function(){
+						$('.popup_user').addClass('drop');
+					
+					});
+					$('.header__opt').mouseout(function(){
+						$('.popup_user').removeClass('drop');
+					
+					});
+				
+				</script>
 			</div>
 		</div>
 	</div>
@@ -475,7 +487,7 @@
 			<div class="mod_tab" role="nav">
 				<a class="mod_tab__item mod_tab__current" href="javascript:;"
 					data-tab="like_song" data-stat="y_new.profile.like.tab.song">歌曲
-					96</a> <a class="mod_tab__item" href="javascript:;"
+					<s:property value="#request.listSize" /></a> <a class="mod_tab__item" href="javascript:;"
 					data-tab="like_playlist"
 					data-stat="y_new.profile.like.tab.playlist">歌单 0</a> <a
 					class="mod_tab__item" href="javascript:;" data-tab="like_album"
@@ -541,19 +553,26 @@
 											title="MV"><span class="icon_txt">MV</span> </a>
 
 										<div class="mod_list_menu">
-											<a href="javascript:;"
-												class="list_menu__item list_menu__play js_play" title="播放">
-												<i class="list_menu__icon_play"></i> <span class="icon_txt">播放</span>
-											</a> <a href="javascript:;" onclick="menu(event)" id="test"
-												class="list_menu__item list_menu__add js_fav" title="添加到歌单"
-												aria-haspopup="true"> <i class="list_menu__icon_add"></i>
-												<span class="icon_txt">添加到歌单</span> </a> <a href="javascript:;"
-												class="list_menu__item list_menu__down js_down" title="下载"
-												aria-haspopup="true"> <i class="list_menu__icon_down"></i>
-												<span class="icon_txt">下载</span> </a> <a href="javascript:;"
-												class="list_menu__item list_menu__share js_share" title="分享"
-												aria-haspopup="true"> <i class="list_menu__icon_share"></i>
-												<span class="icon_txt">分享</span> </a>
+											<a href="javascript:;" class="list_menu__item list_menu__play js_play" title="播放">
+												<i class="list_menu__icon_play"></i> 
+												<span class="icon_txt">播放</span>
+											</a> 
+											
+											<a href="javascript:;" onclick="menu(event)" id="test"
+											   class="list_menu__item list_menu__add js_fav" title="添加到歌单"> 
+											  	<i class="list_menu__icon_add"></i>
+												<span class="icon_txt">添加到歌单</span> 
+											</a> 
+											
+											<a href="javascript:;"class="list_menu__item list_menu__down js_down" title="下载"> 
+												<i class="list_menu__icon_down"></i>
+												<span class="icon_txt">下载</span> 
+											</a> 
+											
+											<a href="javascript:;" class="list_menu__item list_menu__share js_share" title="分享"> 
+												<i class="list_menu__icon_share"></i>
+												<span class="icon_txt">分享</span> 
+										   </a>
 										</div>
 									</div>
 									<!-- 艺人名字 -->
@@ -591,8 +610,9 @@
 									<div class="songlist__other">
 										<i class="icon_sosomusic">无版权</i>
 									</div>
-									<a href="javascript:;" class="songlist__delete js_delfav_song"
-										data-id="102796884"><span class="icon_txt">删除</span> </a>
+									<a href="javascript:;" class="songlist__delete js_delfav_song">
+										<span class="icon_txt">删除</span> 
+									</a>
 								</div>
 							</li>
 							</s:iterator>

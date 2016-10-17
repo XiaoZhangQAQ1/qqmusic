@@ -1323,7 +1323,7 @@ supports  (-webkit-appearance:none ){ .
 .mod_profile_unlogin {
 	height: 922px;
 	background:
-		url(img/bg_profile_unlogin.jpg?max_age=2592000&v=13351eccb28020677a18a0f57349e5e6)
+		url(../images/bg_profile_unlogin.jpg)
 		50% no-repeat;
 	background-size: cover;
 	overflow: hidden
@@ -1332,7 +1332,7 @@ supports  (-webkit-appearance:none ){ .
 .profile_unlogin__desc,.profile_unlogin__tit {
 	background-image:
 		url(img/profile_tit.png?max_age=2592000&v=70fa6a47cc15d1acecae39dda6821428);
-	background-image: -webkit-image-set(url(img/profile_tit.png) 1x,
+	background-image: -webkit-image-set(url(../images/profile_tit.png) 1x,
 		url(img/profile_tit@2x.png) 2x);
 	margin-left: auto;
 	margin-right: auto

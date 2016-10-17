@@ -59,6 +59,7 @@ public class ProfileAction extends ActionSupport{
 		SongListManageDAO count=new SongListManageDAO();
 		
 		int size=SLMS.getMaxPageByGeDan(count.getFavList(user));
+		request.put("listSize", size);
 		if((size%20)==0){
 			this.setMaxPage(size/20);
 		}
