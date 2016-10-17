@@ -33,51 +33,11 @@
 </script>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/pager.js"></script>
+<script type="text/javascript" src="js/profile.js"></script>
 <script type="text/javascript">
 	/* 控制添加菜单弹出 */
 	var clickEvent;
-	function show() {
-		$('.mod_operate_menu').css('display', 'block');
-	}
-	function hide() {
-		$('.mod_operate_menu').css('display', 'none');
-	}
-
-	function menu(event) {
-
-		console.log('how dare you click me( `д´) ');
-		var e = event || window.event;
-		var x = 0;
-		var y = 0;
-		if (e.clientX) {
-			x = e.pageX;
-			y = e.pageY;
-		}
-		console.log('x=' + x + '  ' + 'y=' + y);
-		if ($('.mod_operate_menu').css('display') == "none") {
-			$('.mod_operate_menu').css({
-				position : "absolute",
-				left : x + "px",
-				top : y + "px"
-			});
-			show();
-		} else {
-			hide();
-		}
-	}
-	/*    */
-
-	function bodyClickOn() {
-		clickEvent = "on";
-		console.log(clickEvent);
-
-	}
-
-	function bodyClickOff() {
-		clickEvent = "off";
-		console.log(clickEvent);
-
-	}
+	
 
 	//ONLOAD
 	 window.onload = function() {
@@ -92,7 +52,7 @@
 				hide();
 			}
 		});
-
+		
 	};
 </script>
 
@@ -494,47 +454,19 @@
 		<script type="text/javascript">
 			
 			$('#like_tab').click(function() {
-				console.log('like_box:' + $('#like_box').css('display'));
-				if ($('#like_box').css('display') == "none") {
-					$('#like_box').css('display', 'block');
-					$('#focus_box').css('display', 'none');
-					$('#fans_box').css('display', 'none');
-					$('#create_box').css('display', 'none');
-					console.log('show like_box');
-				}
+				likeTab();
 			});
 
 			$('#create_tab').click(function() {
-				console.log('create_box:' + $('#create_box').css('display'));
-				if ($('#create_box').css('display') == "none") {
-					$('#like_box').css('display', 'none');
-					$('#focus_box').css('display', 'none');
-					$('#fans_box').css('display', 'none');
-					$('#create_box').css('display', 'block');
-					console.log('show create_box');
-				}
+				createTab();
 			});
 
 			$('#focus_tab').click(function() {
-				console.log('focus_box:' + $('#focus_box').css('display'));
-				if ($('#focus_box').css('display') == "none") {
-					$('#like_box').css('display', 'none');
-					$('#focus_box').css('display', 'block');
-					$('#fans_box').css('display', 'none');
-					$('#create_box').css('display', 'none');
-					console.log('show focus_box');
-				}
+				focusTab();
 			});
 
 			$('#fans_tab').click(function() {
-				console.log('fans_box:' + $('#fans_box').css('display'));
-				if ($('#fans_box').css('display') == "none") {
-					$('#like_box').css('display', 'none');
-					$('#focus_box').css('display', 'none');
-					$('#fans_box').css('display', 'block');
-					$('#create_box').css('display', 'none');
-					console.log('show fans_box');
-				}
+				fansTab();
 			});
 		</script>
 		<!-- like_box -->
@@ -719,38 +651,13 @@
 				</div>
 				<!-- 切换控制 -->
 				<script type="text/javascript">
-					function sson(obj){
-						$(obj).addClass('style_switch__item--select');
-						
-						console.log('function sson() was called');
-					}
-					function ssoff(other){
-						other.removeClass("style_switch__item--select");
-						console.log('function ssoff() was called');
-					}
 					$('#upPicDownText').click(function(){
-						$('.mod_playlist_text').css('display','none');
-						$('.mod_playlist').css('display','block');
-						
 						sson(this);
-						var other=$('#isList');
-						ssoff(other);
-						console.log('#upPicDownText was clicked');
-						console.log('列表display:'+$('.mod_playlist_text').css('display'));
-						console.log('图标display:'+$('.mod_playlist').css('display'));
+						UPPT ();
 					});
 					$('#isList').click(function(){
-						$('.mod_playlist_text').css('display','block');
-						$('.mod_playlist').css('display','none');
-						
 						sson(this);
-						var other=$('#upPicDownText');
-						ssoff(other);
-						console.log('#isList was clicked');
-						console.log('列表display:'+$('.mod_playlist_text').css('display'));
-						console.log('图标display:'+$('.mod_playlist').css('display'));
-						
-					
+						isL();
 					});
 				</script>
 			</div>
@@ -1718,6 +1625,7 @@
 	<div class="mod_operate_menu"
 		style="position: absolute; display: none;" id="fav_pop">
 		<div class="operate_menu__cont">
+			<!-- 播放按钮 -->
 			<a href="javascript:;" class="operate_menu__link js_addto_playlist"
 				style="display:block;">播放队列</a>
 			<ul role="menu"
@@ -1740,6 +1648,7 @@
 				
 
 			</ul>
+			<!-- 创建新歌单 -->
 			<a href="javascript:;" class="operate_menu__link js_addto_new"
 				style="display:;"><i class="operate_menu__icon_add"></i>添加到新歌单</a>
 		</div>
