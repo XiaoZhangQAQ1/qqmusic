@@ -1,7 +1,6 @@
-/*分页器:CSS沿用QQMUSIC,使用时在分页按钮的div 加上id="dickson"  */
-/*在struts.xml配置相应的获取最大页数和当前页数的action result路径*/
-/*action类中的变量要设为maxPage和currentPage					*/
-/*PagerAction是用来测试的										*/
+/*分页器:CSS沿用QQMUSIC,将源有分页按钮div的子节点删除,id改成dickson*/
+/*在jsp页面插入js引用即可食用									  */
+/*PagerAction.java;pager.jsp是用来测试的						  */
 
 
 	/*url:获得json的路径*/
