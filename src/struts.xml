@@ -38,9 +38,9 @@
 			<!-- 验证登录有效性 -->
 			<interceptor name="auth" class="com.bdqn.qqmusic.action.interceptor.AuthInerceptor"></interceptor>
 		</interceptors>
-		<!-- 默认的拦截器栈 -->
+		<!-- 主页action -->
 		<action name="indexAction" class="com.bdqn.qqmusic.action.IndexAction">
-			<!-- 待添加 -->
+			<!-- 待添加，这里execute方法 默认调用全局result -->
 		</action>
 		<action name="testJson" class="com.bdqn.qqmusic.action.SingerListAction">			
 			<result name="singerlist" type="json" >
@@ -58,12 +58,16 @@
 		 <!-- "我的音乐"profile页action -->
 		<action name="profile"  class="com.bdqn.qqmusic.action.ProfileAction" >
 			<interceptor-ref name="auth"></interceptor-ref>
+			<!-- 默认拦截器栈 -->
+			<interceptor-ref name="defaultStack" />
 			<result name="success" type="dispatcher" >profile.jsp</result>
 			<result name="error">login.jsp</result>	
 		</action>
 		<!-- 返回json格式 歌单列白 最大页当前页 -->
 		<action name="pager"  class="com.bdqn.qqmusic.action.ProfileAction">
 			<interceptor-ref name="auth"></interceptor-ref>
+			<!-- 默认拦截器栈 -->
+			<interceptor-ref name="defaultStack" />
 			<result name="JSON" type="json" >
 				<param name="includeProperties">
 					maxPage,currentPage,songlist__list.*
