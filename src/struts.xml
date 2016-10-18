@@ -13,24 +13,30 @@
 	
 	<!-- ********************************华丽的分割线************************************ -->		
 	<package name="default" namespace="/" extends="struts-default">
-	    
-	   
-		
-		
-		
+	    <!-- userAction -->
+	   <action name="userAction" class="com.bdqn.qqmusic.action.UserAction" >
+	   		
+			<result name="success" type="chain" >profile</result>
+			<result name="error" type="redirect" >loginForm.jsp</result>
+		</action>
 		<!-- "音乐库"album页action ps:没细改,只是直接连到原来的servlet-->
 		<action name="album" class="com.bdqn.qqmusic.action.AlbumAction" >
 			<result name="success" type="redirect" >album.jsp</result>
 		</action>
-		
 		<!-- "音乐库"singerlist页action -->
 		<action name="singerlist" class="com.bdqn.qqmusic.action.SingerListAction" >
 			<result name="singerlist"  >testA.jsp</result>
-		</action>
-				
+		</action>		
 	</package>
+	
 	<!-- json -->
 	<package name="json" namespace="/" extends="json-default">
+		<interceptors>
+			<!-- 验证登录有效性 -->
+			<interceptor name="auth" class="com.bdqn.qqmusic.action.interceptor.AuthInerceptor"></interceptor>
+		</interceptors>
+		<!-- 默认的拦截器栈 -->
+	
 		<action name="testJson" class="com.bdqn.qqmusic.action.SingerListAction">			
 			<result name="singerlist" type="json" >
 				<param name="includeProperties">
@@ -42,11 +48,12 @@
  		
 		 <!-- "我的音乐"profile页action -->
 		<action name="profile"  class="com.bdqn.qqmusic.action.ProfileAction" >
+			<interceptor-ref name="auth"></interceptor-ref>
 			<result name="success" type="dispatcher" >profile.jsp</result>
-			<!-- 检测登录状态待完成 -->
-			<result name="error">profile.jsp</result>	
+			<result name="error">loginForm.jsp</result>	
 		</action>
 		<action name="pager"  class="com.bdqn.qqmusic.action.ProfileAction">
+		<interceptor-ref name="auth"></interceptor-ref>
 			<result name="success" type="json" >
 				<param name="includeProperties">
 					maxPage,currentPage,songlist__list.*
