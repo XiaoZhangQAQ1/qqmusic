@@ -794,10 +794,7 @@ supports  (-webkit-appearance:none ){ .
 }
 
 @
--webkit-keyframes play { 0{
-	opacity: 1;
-	-webkit-transform: translateY(0)
-}
+
 
 100%{
 opacity
@@ -807,10 +804,7 @@ opacity
 }
 }
 @
-keyframes play { 0{
-	opacity: 1;
-	transform: translateY(0)
-}
+
 
 100%{
 opacity

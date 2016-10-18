@@ -9,16 +9,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../css/layout0927.css">
 <link rel="stylesheet" href="../css/profile.css">
+<link rel="stylesheet" href="../css/jquery-webox.css"  type="text/css">
 <script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+<script type="text/javascript" src="../js/jquery-webox.js" ></script>
 <script type="text/javascript" src="../js/pager.js" ></script>
 <title>分页器</title>
 </head>
 <body>
 
 <script type="text/javascript">
-	window.onload=function(){
-		//$('.none').remove();
-	};
+	$(document).ready(function(){
+		$('#testIFRAME').click(function(){
+			$.webox({
+			height:480,
+			width:700,
+			bgvisibel:true,
+			title:'iframe弹出层调用RBQ',
+			iframe:'http://localhost:8080/qqmusic/loginForm.jsp'
+			});
+			
+		});
+	});
 	
 </script>
 <div><input type="button" id="clear" value="clear"></div>
@@ -50,7 +61,7 @@
 <!-- <audio src="http://m5.file.xiami.com/454/10454/56353/2053304_51341_l.mp3?auth_key=2e1a0e1b2b3bf1e4f3598d5f164b0bae-1477191600-0-null" controls="controls">
 Your browser does not support the audio element.
 </audio> -->
-
+		<a id="testIFRAME" href="javascript:void(0);" >click me and you get a iframe</a>
 	<div class="mod_page_nav js_pager">
 		
 		<a href="javascript:;" class="prev js_pageindex"  title="上一页" hidefocus="">
