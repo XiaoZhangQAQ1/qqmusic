@@ -337,7 +337,7 @@ if(window.ActiveXObject || window.msIsStaticHTML){
                 <a href="index.htm" tppabs="http://y.qq.com/" class="top_nav__link top_nav__link--current" title="音乐馆">音乐馆<i class="top_nav__txt"></i></a>
             </li>
             <li class="top_nav__item top_nav__item--mine">
-                <a href="portal/profile.html" tppabs="http://y.qq.com/portal/profile.html" class="top_nav__link" title="我的音乐">我的音乐<i class="top_nav__txt"></i></a>
+                <a href="profile" tppabs="http://y.qq.com/portal/profile.html" class="top_nav__link" title="我的音乐">我的音乐<i class="top_nav__txt"></i></a>
             </li>
             <li class="top_nav__item top_nav__item--down">
                 <a href="download/index.html" tppabs="http://y.qq.com/download/index.html" class="top_nav__link" title="下载客户端" target="_blank">下载客户端<i class="top_nav__txt"></i></a>

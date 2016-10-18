@@ -11,14 +11,16 @@
 	<constant name="struts.configuration.xml.reload" value="true"></constant>
 	<!-- ********************************华丽的分割线************************************ -->
 	
-	<!-- ********************************华丽的分割线************************************ -->		
+	<!-- ********************************华丽的分割线************************************ -->	
+	<!-- 全局result -->
+	<package name="globalQQmusic" namespace="/" extends="json-default">
+		<global-results>
+            <result name="index">index.jsp</result>
+            <result name="crash">index.jsp</result> 
+        </global-results>
+	</package>	
+		
 	<package name="default" namespace="/" extends="struts-default">
-	    <!-- userAction -->
-	   <action name="userAction" class="com.bdqn.qqmusic.action.UserAction" >
-	   		
-			<result name="success" type="chain" >profile</result>
-			<result name="error" type="redirect" >loginForm.jsp</result>
-		</action>
 		<!-- "音乐库"album页action ps:没细改,只是直接连到原来的servlet-->
 		<action name="album" class="com.bdqn.qqmusic.action.AlbumAction" >
 			<result name="success" type="redirect" >album.jsp</result>
@@ -30,13 +32,16 @@
 	</package>
 	
 	<!-- json -->
-	<package name="json" namespace="/" extends="json-default">
+	<package name="json" namespace="/" extends="globalQQmusic">
+		<!-- 拦截器s -->
 		<interceptors>
 			<!-- 验证登录有效性 -->
 			<interceptor name="auth" class="com.bdqn.qqmusic.action.interceptor.AuthInerceptor"></interceptor>
 		</interceptors>
 		<!-- 默认的拦截器栈 -->
-	
+		<action name="indexAction" class="com.bdqn.qqmusic.action.IndexAction">
+			<!-- 待添加 -->
+		</action>
 		<action name="testJson" class="com.bdqn.qqmusic.action.SingerListAction">			
 			<result name="singerlist" type="json" >
 				<param name="includeProperties">
@@ -44,17 +49,22 @@
 				</param>
 			</result>
 		</action>
-		
+		 <!-- userAction -->
+	   	<action name="userAction" class="com.bdqn.qqmusic.action.UserAction" >
+	   		<result name="success" type="chain" >profile</result>
+			<result name="error" type="redirect" >login.jsp</result>
+		</action>
  		
 		 <!-- "我的音乐"profile页action -->
 		<action name="profile"  class="com.bdqn.qqmusic.action.ProfileAction" >
 			<interceptor-ref name="auth"></interceptor-ref>
 			<result name="success" type="dispatcher" >profile.jsp</result>
-			<result name="error">loginForm.jsp</result>	
+			<result name="error">login.jsp</result>	
 		</action>
+		<!-- 返回json格式 歌单列白 最大页当前页 -->
 		<action name="pager"  class="com.bdqn.qqmusic.action.ProfileAction">
-		<interceptor-ref name="auth"></interceptor-ref>
-			<result name="success" type="json" >
+			<interceptor-ref name="auth"></interceptor-ref>
+			<result name="JSON" type="json" >
 				<param name="includeProperties">
 					maxPage,currentPage,songlist__list.*
 				</param>

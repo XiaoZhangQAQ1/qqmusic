@@ -167,7 +167,7 @@
         -->
 			<ul class="mod_top_nav" role="nav">
 				<li class="top_nav__item top_nav__item--room"><a
-					href="http://y.qq.com/" class="top_nav__link" title="音乐馆">音乐馆<i
+					href="indexAction" class="top_nav__link" title="音乐馆">音乐馆<i
 						class="top_nav__txt"></i> </a></li>
 				<li class="top_nav__item top_nav__item--mine"><a
 					href="http://y.qq.com/portal/profile.html"
@@ -356,7 +356,7 @@
 								target="_blank"><img src="images/sui_g.png" alt="付费音乐包"
 								class="popup_user_data__lv_icon"> </a>
 						</div>
-						<a href="javascript:;" class="popup_user_data__out js_logout"
+						<a href="userAction!logout" class="popup_user_data__out js_logout"
 							data-stat="y_new.top.pop.logout">[退出]</a>
 					</div>
 					<ul class="mod_user_statistic">
