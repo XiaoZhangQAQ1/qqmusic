@@ -1,5 +1,6 @@
 package com.bdqn.qqmusic.action;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 
@@ -18,9 +19,10 @@ private HttpSession session=ServletActionContext.getRequest().getSession();
 		System.out.println("用户提交的密码  :"+user.getUpwd());
 		
 		if (!user.getUname().equals("")&&user!=null) {
+			System.out.println("用户输入非空,开始查找数据库");
 			UserDAO userDAO=new UserDAO();
 			List<User> ulist=userDAO.findByUname(user.getUname());
-			if (ulist!=null) {
+			if (ulist!=null&&ulist.size()!=0) {
 				System.out.println("数据库返回用户名 :"+ulist.get(0).getUname());
 				System.out.println("数据库返回用户密码 :"+ulist.get(0).getUpwd());
 				User userAuth=ulist.get(0);
